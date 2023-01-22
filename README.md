@@ -1,3 +1,11 @@
+# Vim _ Assembly Highlight Syntax
+
+```
+
+:set ft=nasm  " assembly highlight syntax
+
+```
+
 # Assembly Language
 
 https://github.com/EbookFoundation/free-programming-books/blob/main/books/free-programming-books-langs.md#non-x86
