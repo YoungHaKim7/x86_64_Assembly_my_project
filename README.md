@@ -114,3 +114,9 @@ choco install nasm
 
 # Assembly 기초 basic
 
+
+
+# Bootsector Game From Scratch - Space Invaders (x86 asm) Game만들기(Assembly로)
+
+[https://youtu.be/TVvTDjMph1M](https://youtu.be/TVvTDjMph1M)
+
