@@ -20,7 +20,8 @@ https://youtu.be/HgEGAaYdABA
 
 http://www.egr.unlv.edu/~ed/assembly64.pdf
 
-# apt install
+
+# apt install(Linux OS)
 
 ```
 $ sudo apt install nasm
@@ -92,3 +93,24 @@ section     .data:
 
 
 ```
+
+
+# Windows OS 
+
+```
+choco install nasm
+
+```
+
+- This package uses the official nasm Windows installer, which doesn't add nasm to PATH. You may voice out your request in the nasm issue tracker, in which there is an existing issue filed
+
+- PATH설정해줘야함. 나 같은 경우는 
+"C:\Program Files\NASM"
+여기 설치 되서 여기에 설치함.
+
+
+[https://community.chocolatey.org/packages/nasm](https://community.chocolatey.org/packages/nasm)
+
+
+# Assembly 기초 basic
+
