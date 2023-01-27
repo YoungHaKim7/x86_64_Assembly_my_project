@@ -106,7 +106,7 @@ choco install nasm
 
 - PATH설정해줘야함. 나 같은 경우는 
 "C:\Program Files\NASM"
-여기 설치 되서 여기에 설치함.
+여기 PATH 설정함.
 
 
 [https://community.chocolatey.org/packages/nasm](https://community.chocolatey.org/packages/nasm)
