@@ -1,4 +1,4 @@
-# Vim _ Assembly Highlight Syntax
+# Vim \_ Assembly Highlight Syntax
 
 ```
 
@@ -19,7 +19,6 @@ https://youtu.be/HgEGAaYdABA
 - x86_64_Assembly Language Programming with Ubuntu
 
 http://www.egr.unlv.edu/~ed/assembly64.pdf
-
 
 # apt install(Linux OS)
 
@@ -42,7 +41,6 @@ Unpacking nasm (2.15.05-1) ...
 Setting up nasm (2.15.05-1) ...
 Processing triggers for man-db (2.10.2-1) ...
 ```
-
 
 # ASM Sample
 
@@ -94,8 +92,7 @@ section     .data:
 
 ```
 
-
-# Windows OS 
+# Windows OS
 
 ```
 choco install nasm
@@ -104,19 +101,102 @@ choco install nasm
 
 - This package uses the official nasm Windows installer, which doesn't add nasm to PATH. You may voice out your request in the nasm issue tracker, in which there is an existing issue filed
 
-- PATH설정해줘야함. 나 같은 경우는 
-"C:\Program Files\NASM"
-여기 PATH 설정함.
-
+- PATH설정해줘야함. 나 같은 경우는
+  "C:\Program Files\NASM"
+  여기 PATH 설정함.
 
 [https://community.chocolatey.org/packages/nasm](https://community.chocolatey.org/packages/nasm)
 
-
 # Assembly 기초 basic
-
-
 
 # Bootsector Game From Scratch - Space Invaders (x86 asm) Game만들기(Assembly로)
 
 [https://youtu.be/TVvTDjMph1M](https://youtu.be/TVvTDjMph1M)
 
+<br>
+
+<br>
+
+<hr>
+
+====================================================
+
+# x86_64_Assembly Language Programming with Ubuntu
+
+# Data Storage Sizes(page 8.)
+
+<table border="1">
+    <tr>
+    <td colspan="3" align="center">Data Storage Sizes</td>
+    </tr>
+    <tr align="center">
+        <td>Storage</td>
+        <td>Size(bits)</td>
+        <td>Size(bytes)</td>
+    </tr>
+    <tr align="center">
+        <td>Byte</td>
+        <td>8-bits</td>
+        <td>1 byte</td>
+    </tr>
+    <tr align="center">
+        <td>Word</td>
+        <td>16-bits</td>
+        <td>2 bytes</td>
+    </tr>
+    <tr align="center">
+        <td>Double-word</td>
+        <td>32-bits</td>
+        <td>4 bytes</td>
+    </tr>
+    <tr align="center">
+        <td>Quadword</td>
+        <td>64-bits</td>
+        <td>8 bytes</td>
+    </tr>
+    <tr align="center">
+        <td>Double quadword</td>
+        <td>128-bits</td>
+        <td>16 bytes</td>
+    </tr>
+</table>
+
+http://www.egr.unlv.edu/~ed/assembly64.pdf
+
+<table border="1">
+    <tr>
+    <td colspan="3" align="center">Data Storage Sizes(page9.)<br>C/C++ declarations are mapped as follows:</td>
+    </tr>
+    <tr align="center">
+        <td>C/C++<br>Declaration</td>
+        <td>Storage</td>
+        <td>Size(bits)</td>
+        <td>Size(bytes)</td>
+    </tr>
+    <tr align="center">
+        <td>char</td>
+        <td>Byte</td>
+        <td>8-bits</td>
+        <td>1 byte</td>
+    </tr>
+    <tr align="center">
+        <td>Word</td>
+        <td>16-bits</td>
+        <td>2 bytes</td>
+    </tr>
+    <tr align="center">
+        <td>Double-word</td>
+        <td>32-bits</td>
+        <td>4 bytes</td>
+    </tr>
+    <tr align="center">
+        <td>Quadword</td>
+        <td>64-bits</td>
+        <td>8 bytes</td>
+    </tr>
+    <tr align="center">
+        <td>Double quadword</td>
+        <td>128-bits</td>
+        <td>16 bytes</td>
+    </tr>
+</table>
