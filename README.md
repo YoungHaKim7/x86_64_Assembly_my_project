@@ -406,7 +406,7 @@ http://www.egr.unlv.edu/~ed/assembly64.pdf
 
 stateDiagram-v2
 
-    state CPUChip {
+    state CPU__Chip {
         Core__0 --> L1_Cache
         Core__1 --> L1_Cache_
         L1_Cache --> L2_Cache
