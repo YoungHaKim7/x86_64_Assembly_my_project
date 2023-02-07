@@ -234,7 +234,7 @@ http://www.egr.unlv.edu/~ed/assembly64.pdf
     <td colspan="2" align="center">General Memory Layout</td>
     </tr>
     <tr align="center">
-        <td rowspan="5">high memory<br><br><br><br><br><br><br><br><br>low momory</td>
+        <td rowspan="5">high memory<br><br><br><br><br><br><br><br><br>low memory</td>
         <td>stack<br>.<br>.<br>.<br>heap</td>
     </tr>
     <tr align="center">
