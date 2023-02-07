@@ -260,7 +260,7 @@ http://www.egr.unlv.edu/~ed/assembly64.pdf
         <td>8bit</td>
         <td>8bit</td>
         <td>8bit</td>
-        <td colspan="4" align="center">eax<br>(Lowerst 32-bits<br><----------------    ----------------------></td>
+        <td colspan="4" align="center">eax<br>(Lowest 32-bits<br><----------------    ----------------------></td>
         </tr>
     </tr>
     <tr align="center">
@@ -302,6 +302,96 @@ http://www.egr.unlv.edu/~ed/assembly64.pdf
         <td>eax</td>
         <td>ax</td>
         <td>al</td>
+    </tr>
+    <tr align="center">
+        <td>rbx</td>
+        <td>ebx</td>
+        <td>bx</td>
+        <td>bl</td>
+    </tr>
+    <tr align="center">
+        <td>rcx</td>
+        <td>ecx</td>
+        <td>cx</td>
+        <td>cl</td>
+    </tr>
+    <tr align="center">
+        <td>rdx</td>
+        <td>edx</td>
+        <td>dx</td>
+        <td>dl</td>
+    </tr>
+    <tr align="center">
+        <td>rsi</td>
+        <td>esi</td>
+        <td>si</td>
+        <td>sil</td>
+    </tr>
+    <tr align="center">
+        <td>rdi</td>
+        <td>edi</td>
+        <td>di</td>
+        <td>dil</td>
+    </tr>
+    <tr align="center">
+        <td>rbp</td>
+        <td>ebp</td>
+        <td>bp</td>
+        <td>bpl</td>
+    </tr>
+    <tr align="center">
+        <td>rsp</td>
+        <td>esp</td>
+        <td>sp</td>
+        <td>spl</td>
+    </tr>
+    <tr align="center">
+        <td>r8</td>
+        <td>r8d</td>
+        <td>r8w</td>
+        <td>r8b</td>
+    </tr>
+    <tr align="center">
+        <td>r9</td>
+        <td>r9d</td>
+        <td>r9w</td>
+        <td>r9b</td>
+    </tr>
+    <tr align="center">
+        <td>r10</td>
+        <td>r10d</td>
+        <td>r10w</td>
+        <td>r10b</td>
+    </tr>
+    <tr align="center">
+        <td>r11</td>
+        <td>r11d</td>
+        <td>r11w</td>
+        <td>r11b</td>
+    </tr>
+    <tr align="center">
+        <td>r12</td>
+        <td>r12d</td>
+        <td>r12w</td>
+        <td>r12b</td>
+    </tr>
+    <tr align="center">
+        <td>r13</td>
+        <td>r13d</td>
+        <td>r13w</td>
+        <td>r13b</td>
+    </tr>
+    <tr align="center">
+        <td>r14</td>
+        <td>r14d</td>
+        <td>r14w</td>
+        <td>r14b</td>
+    </tr>
+    <tr align="center">
+        <td>r15</td>
+        <td>r15d</td>
+        <td>r15w</td>
+        <td>r15b</td>
     </tr>
 </table>
 
