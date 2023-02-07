@@ -115,6 +115,14 @@ choco install nasm
 
 <br>
 
+# RustLang inline-assembly
+
+https://doc.rust-lang.org/reference/inline-assembly.html
+
+https://doc.rust-lang.org/rust-by-example/unsafe/asm.html
+
+<br>
+
 <br>
 
 <hr>
