@@ -301,3 +301,38 @@ http://www.egr.unlv.edu/~ed/assembly64.pdf
 </table>
 
 http://www.egr.unlv.edu/~ed/assembly64.pdf
+
+
+# Some typical performance and size characteristics (Page19)
+
+
+<table border="1">
+    <tr>
+    <td colspan="3" align="center"></td>
+    </tr>
+    <tr align="center">
+        <td>Memory Unit</td>
+        <td>Example Size</td>
+        <td>Typical Speed</td>
+    </tr>
+    <tr align="center">
+        <td>Registers</td>
+        <td>16, 64-bit registers</td>
+        <td>~1 nanoseconds<sup>13</sup></td>
+    </tr>
+    <tr align="center">
+        <td>Cache Memory</td>
+        <td>4 - 8+ Megabytes<sup>14</sup><br>(L1 and L2)</td>
+        <td>~5-60 nanoseconds</td>
+    </tr>
+    <tr align="center">
+        <td>Primary Storage<br>(i.e., main memory)</td>
+        <td>2 - 32+ Gigabytes<sup>15</sup></td>
+        <td>~100-150 nanoseconds</td>
+    </tr>
+    <tr align="center">
+        <td>Secondary Storage<br>(i.e., disk, SSD's, etc.)</td>
+        <td>500 Gigabytes -<br> 4+ Terabytes<sup>16</sup></td>
+        <td>~3-15 milliseconds<sup>17</sup></td>
+    </tr>
+</table>
