@@ -224,3 +224,31 @@ http://www.egr.unlv.edu/~ed/assembly64.pdf
         <td>16 bytes</td>
     </tr>
 </table>
+
+<br>
+
+# Memory Layout(Page17)
+
+<table border="1">
+    <tr>
+    <td colspan="2" align="center">General Memory Layout</td>
+    </tr>
+    <tr align="center">
+        <td rowspan="5">high memory<br><br><br><br><br><br><br><br><br>low momory</td>
+        <td>stack<br>.<br>.<br>.<br>heap</td>
+    </tr>
+    <tr align="center">
+        <td>BSS - uninitialized data</td>
+    </tr>
+    <tr align="center">
+        <td>data</td>
+    </tr>
+    <tr align="center">
+        <td>text (code)</td>
+    </tr>
+    <tr align="center">
+        <td>reserved</td>
+    </tr>
+</table>
+
+http://www.egr.unlv.edu/~ed/assembly64.pdf
