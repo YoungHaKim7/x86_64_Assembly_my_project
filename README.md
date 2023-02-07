@@ -293,9 +293,9 @@ http://www.egr.unlv.edu/~ed/assembly64.pdf
     </tr>
     <tr align="center">
         <td>64-bit register</td>
-        <td>Lowest<br>32-bit</td>
-        <td>Lowest<br>16-bit</td>
-        <td>Lowest<br>8-bit</td>
+        <td>Lowest<br>32-bits</td>
+        <td>Lowest<br>16-bits</td>
+        <td>Lowest<br>8-bits</td>
     </tr>
     <tr align="center">
         <td>rax</td>
