@@ -279,12 +279,31 @@ http://www.egr.unlv.edu/~ed/assembly64.pdf
         <td>8bit</td>
         <td>8bit</td>
         <td>8bit</td>
-        <td>al<br><-- 8-bits --></td>
+        <td>ah<br><-- 8-bits --></td>
         <td>al<br><-- 8-bits --></td>
     </tr>
 </table>
 
 <br>
+
+
+<table border="1">
+    <tr>
+    <td colspan="4" align="center">General Purpose Registers(GPRs)</td>
+    </tr>
+    <tr align="center">
+        <td>64-bit register</td>
+        <td>Lowest<br>32-bit</td>
+        <td>Lowest<br>16-bit</td>
+        <td>Lowest<br>8-bit</td>
+    </tr>
+    <tr align="center">
+        <td>rax</td>
+        <td>eax</td>
+        <td>ax</td>
+        <td>al</td>
+    </tr>
+</table>
 
 http://www.egr.unlv.edu/~ed/assembly64.pdf
 
