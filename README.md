@@ -107,13 +107,10 @@ choco install nasm
 
 [https://community.chocolatey.org/packages/nasm](https://community.chocolatey.org/packages/nasm)
 
-# Assembly 기초 basic
-
-# Bootsector Game From Scratch - Space Invaders (x86 asm) Game만들기(Assembly로)
-
-[https://youtu.be/TVvTDjMph1M](https://youtu.be/TVvTDjMph1M)
-
 <br>
+
+<hr>
+# Rust Languages & Assembly
 
 # RustLang inline-assembly
 
@@ -122,6 +119,18 @@ https://doc.rust-lang.org/reference/inline-assembly.html
 https://doc.rust-lang.org/rust-by-example/unsafe/asm.html
 
 <br>
+
+<hr>
+
+# Assembly 기초 basic
+
+# Bootsector Game From Scratch - Space Invaders (x86 asm) Game만들기(Assembly로)
+
+[https://youtu.be/TVvTDjMph1M](https://youtu.be/TVvTDjMph1M)
+
+<br>
+
+
 
 <br>
 
