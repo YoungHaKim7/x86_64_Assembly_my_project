@@ -248,6 +248,44 @@ http://www.egr.unlv.edu/~ed/assembly64.pdf
 
 <br>
 
+# General Purpose Registers(GPRs) page 10
+
+
+<table border="1">
+    <tr>
+    <td colspan="8" align="center">rax<br><-- 64 bits --></td>
+    </tr>
+    <tr align="center">
+        <td>8bit</td>
+        <td>8bit</td>
+        <td>8bit</td>
+        <td>8bit</td>
+        <td colspan="4" align="center">eax<br>(Lowerst 32-bits<br><----------------    ----------------------></td>
+        </tr>
+    </tr>
+    <tr align="center">
+        <td>8bit</td>
+        <td>8bit</td>
+        <td>8bit</td>
+        <td>8bit</td>
+        <td>8bit</td>
+        <td>8bit</td>
+        <td colspan="2", align="center"><---    ax     ---><br>Lowest 16-bits</td>
+    </tr>
+    <tr align="center">
+        <td>8bit</td>
+        <td>8bit</td>
+        <td>8bit</td>
+        <td>8bit</td>
+        <td>8bit</td>
+        <td>8bit</td>
+        <td>al<br><-- 8-bits --></td>
+        <td>al<br><-- 8-bits --></td>
+    </tr>
+
+<br>
+
+
 # Memory Layout(Page17)
 
 <table border="1">
