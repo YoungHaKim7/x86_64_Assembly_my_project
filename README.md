@@ -137,6 +137,27 @@ https://doc.rust-lang.org/rust-by-example/unsafe/asm.html
 
 <br>
 
+# ASCII Table
+
+https://www.asciitable.com/
+
+```
+$ python
+
+Python 3.11.0 (main, Oct 24 2022, 18:26:48) [MSC v.1933 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+
+>>> 0x0a
+10
+
+>>> chr(0x0a)
+'\n'
+
+>>>
+
+
+```
+
 
 
 <br>
