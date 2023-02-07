@@ -273,3 +273,31 @@ http://www.egr.unlv.edu/~ed/assembly64.pdf
 </table>
 
 http://www.egr.unlv.edu/~ed/assembly64.pdf
+
+<br>
+
+# Memory Hierarchy(Page18)
+
+<table border="1">
+    <tr>
+    <td colspan="2" align="center">Memory Hierarchy</td>
+    </tr>
+    <tr align="center">
+        <td rowspan="5">Smaller, faster,<br>and more expensive<br><br><br><br><br><br><br><br><br>Larger,slower,<br>and less expensive</td>
+        <td>CPU<br>Registers</td>
+    </tr>
+    <tr align="center">
+        <td>Cache</td>
+    </tr>
+    <tr align="center">
+        <td>Primary Storage<br>Main Memory(RAM)</td>
+    </tr>
+    <tr align="center">
+        <td>Secondary Storage<br>(disk drives, SSD's, etc.)</td>
+    </tr>
+    <tr align="center">
+        <td>Tertiary Storage<br>(remote storage, optical, backups,etc.)</td>
+    </tr>
+</table>
+
+http://www.egr.unlv.edu/~ed/assembly64.pdf
