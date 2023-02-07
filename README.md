@@ -404,12 +404,16 @@ http://www.egr.unlv.edu/~ed/assembly64.pdf
 
 ```mermaid
 
-graph TD;
-    Core_0-->L1_Cache;
-    Core_1-->L1_Cache_;
-    L1_Cache-->L2_Cache;
-    L1_Cache_-->L2_Cache;
-    L2_Cache-->BUS;
+stateDiagram-v2
+
+    state CPUChip {
+        Core__0 --> L1_Cache
+        Core__1 --> L1_Cache_
+        L1_Cache --> L2_Cache
+        L1_Cache_ --> L2_Cache
+    }
+
+    L2_Cache --> BUS
 
 ```
 
