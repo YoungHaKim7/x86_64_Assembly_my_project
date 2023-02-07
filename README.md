@@ -282,8 +282,11 @@ http://www.egr.unlv.edu/~ed/assembly64.pdf
         <td>al<br><-- 8-bits --></td>
         <td>al<br><-- 8-bits --></td>
     </tr>
+</table>
 
 <br>
+
+http://www.egr.unlv.edu/~ed/assembly64.pdf
 
 
 # Memory Layout(Page17)
