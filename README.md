@@ -129,7 +129,7 @@ https://doc.rust-lang.org/rust-by-example/unsafe/asm.html
 
 <hr>
 
-# Assembly 기초 basic
+# Assembly 기초 basic<a href="https://en.wikipedia.org/wiki/Assembly_language"><img align="left" alt="assembly" width="39px" src="https://user-images.githubusercontent.com/67513038/210325356-f21c646d-6ef1-4736-ac42-53f0b5e149ca.png"></a>
 
 # Bootsector Game From Scratch - Space Invaders (x86 asm) Game만들기(Assembly로)
 
@@ -145,7 +145,7 @@ https://doc.rust-lang.org/rust-by-example/unsafe/asm.html
 
 ====================================================
 
-# x86_64_Assembly Language Programming with Ubuntu
+# x86_64_Assembly Language Programming with Ubuntu<a href="https://en.wikipedia.org/wiki/Assembly_language"><img align="left" alt="assembly" width="39px" src="https://user-images.githubusercontent.com/67513038/210325356-f21c646d-6ef1-4736-ac42-53f0b5e149ca.png"></a>
 
 # Data Storage Sizes(page 8.)
 
