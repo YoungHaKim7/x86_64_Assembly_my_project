@@ -399,7 +399,7 @@ http://www.egr.unlv.edu/~ed/assembly64.pdf
 
 <br>
 
-# CPU Block Diagram
+# CPU Block Diagram(Page 15)
 
 
 ```mermaid
