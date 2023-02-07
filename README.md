@@ -401,10 +401,19 @@ http://www.egr.unlv.edu/~ed/assembly64.pdf
 
 # CPU Block Diagram
 
+
 ```mermaid
-flowchart TD
-    Core 0 --> L1 Cache --> L2 Cache
+
+graph TD;
+    Core_0-->L1_Cache;
+    Core_1-->L1_Cache_;
+    L1_Cache-->L2_Cache;
+    L1_Cache_-->L2_Cache;
+    L2_Cache-->BUS;
+
 ```
+
+<br>
 
 # Memory Layout(Page17)
 
