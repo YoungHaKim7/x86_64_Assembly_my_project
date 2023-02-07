@@ -397,6 +397,14 @@ http://www.egr.unlv.edu/~ed/assembly64.pdf
 
 http://www.egr.unlv.edu/~ed/assembly64.pdf
 
+<br>
+
+# CPU Block Diagram
+
+```mermaid
+flowchart TD
+    Core 0 --> L1 Cache --> L2 Cache
+```
 
 # Memory Layout(Page17)
 
