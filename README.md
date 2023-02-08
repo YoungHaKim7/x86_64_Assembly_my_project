@@ -6,6 +6,36 @@
 
 ```
 
+<br>
+
+# 1.4.4.1 YASM References
+
+http://yasm.tortall.net/
+
+1.4.4.1 YASM References
+The YASM assembler is an open source assembler commonly available on Linux-based
+systems.
+The YASM references are as follows:
+
+- Yasm Web Site http://yasm.tortall.net/
+- Yasm Documentation http://yasm.tortall.net/Guide.html
+
+  Additional information regarding YASM may be available a number of assembly
+  language sites and can be found through an Internet search.
+
+# 1.4.4.2 DDD Debugger References
+
+The DDD debugger is an open source debugger capable of supporting assembly
+language.
+
+- DDD Web Site https://www.gnu.org/software/ddd/
+- DDD Documentation https://www.gnu.org/software/ddd/manual/
+
+Additional information regarding DDD may be at a number of assembly language sites
+and can be found through an Internet search.
+
+<br>
+
 # Assembly Language
 
 https://github.com/EbookFoundation/free-programming-books/blob/main/books/free-programming-books-langs.md#non-x86
@@ -158,8 +188,6 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 ```
 
-
-
 <br>
 
 <hr>
@@ -250,7 +278,6 @@ http://www.egr.unlv.edu/~ed/assembly64.pdf
 
 # General Purpose Registers(GPRs) page 10
 
-
 <table border="1">
     <tr>
     <td colspan="8" align="center">rax<br><-- 64 bits --></td>
@@ -285,7 +312,6 @@ http://www.egr.unlv.edu/~ed/assembly64.pdf
 </table>
 
 <br>
-
 
 <table border="1">
     <tr>
@@ -401,7 +427,6 @@ http://www.egr.unlv.edu/~ed/assembly64.pdf
 
 # CPU Block Diagram(Page 15)
 
-
 ```mermaid
 
 stateDiagram-v2
@@ -473,9 +498,7 @@ http://www.egr.unlv.edu/~ed/assembly64.pdf
 
 http://www.egr.unlv.edu/~ed/assembly64.pdf
 
-
 # Some typical performance and size characteristics (Page19)
-
 
 <table border="1">
     <tr>
@@ -507,3 +530,130 @@ http://www.egr.unlv.edu/~ed/assembly64.pdf
         <td>~3-15 milliseconds<sup>17</sup></td>
     </tr>
 </table>
+
+<br>
+
+# Data Section(Page34) - All initialized variables & constants
+
+Refer to the following sections for a series of examples using various data types.
+
+The supported data types are as follows:
+
+<table border="1">
+    <tr>
+    <td colspan="2" align="center">section .data<br>All initialized variables and constants</td>
+    </tr>
+    <tr align="center">
+        <td>Declaration</td>
+        <td></td>
+    </tr>
+    <tr align="center">
+        <td>db</td>
+        <td>8-bit variable(s)</td>
+    </tr>
+    <tr align="center">
+        <td>dw</td>
+        <td>16-bit variable(s)</td>
+    </tr>
+    <tr align="center">
+        <td>dd</td>
+        <td>32-bit variable(s)</td>
+    </tr>
+    <tr align="center">
+        <td>dq</td>
+        <td>64-bit variable(s)</td>
+    </tr>
+    <tr align="center">
+        <td>ddq</td>
+        <td>128-bit variable(s) -> integer</td>
+    </tr>
+    <tr align="center">
+        <td>dt</td>
+        <td>128-bit variable(s) -> float</td>
+    </tr>
+</table>
+
+http://www.egr.unlv.edu/~ed/assembly64.pdf
+
+ex)
+
+```asm
+
+; The general format is:
+
+; <variableName> <dataType> <initialValue>
+
+section .data
+
+bVar     db      10             ; byte variable
+cVar     db      "H"            ; single character
+strng    db      "Hello World"  ; string
+wVar     dw      5000           ; 16-bit variable
+dVar     dd      50000          ; 32-bit variable
+arr      dd      100, 200, 300  ; 3 element array
+flt1      dd      3.14159        ; 32-bit float
+qVar     dq      1000000000     ; 64-bit variable
+
+```
+
+The value specified must be able to fit in the specified data type. For example, if the
+value of a byte sized variables is defined as 500, it would generate an assembler error.
+
+<br>
+
+# BBS Section(Page35) - All uninitialized variables
+
+Uninitialized data is declared in the "section .bss" section.
+
+The supported data types are as follows:
+
+<table border="1">
+    <tr>
+    <td colspan="2" align="center">section .data<br>All initialized variables and constants</td>
+    </tr>
+    <tr align="center">
+        <td>Declaration</td>
+        <td></td>
+    </tr>
+    <tr align="center">
+        <td>resb</td>
+        <td>8-bit variable(s)</td>
+    </tr>
+    <tr align="center">
+        <td>resw</td>
+        <td>16-bit variable(s)</td>
+    </tr>
+    <tr align="center">
+        <td>resd</td>
+        <td>32-bit variable(s)</td>
+    </tr>
+    <tr align="center">
+        <td>resq</td>
+        <td>64-bit variable(s)</td>
+    </tr>
+    <tr align="center">
+        <td>resdq</td>
+        <td>128-bit variable(s)</td>
+    </tr>
+</table>
+
+ex)
+
+```asm
+; The general format is:
+
+; <variableName> <resType> <count>
+
+section .bbs
+
+bArr    resb    10     ; 10 element byte array
+wArr    resw    50     ; 50 element word array
+dArr    resd    100    ; 100 element double array
+qArr    resq    200    ; 200 element quad array
+
+
+// The allocated array is not initialized to any specific value.
+
+```
+
+http://www.egr.unlv.edu/~ed/assembly64.pdf
