@@ -92,7 +92,7 @@ Hello World!
 
 # ASM hello.asm
 
-```
+```asm
 ; World World x86_64 Intel Cpu Assembly
 ; hello.asm
 
