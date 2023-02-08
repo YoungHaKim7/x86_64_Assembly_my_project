@@ -609,7 +609,7 @@ The supported data types are as follows:
 
 <table border="1">
     <tr>
-    <td colspan="2" align="center">section .data<br>All initialized variables and constants</td>
+    <td colspan="2" align="center">section .bbs<br>Uninitialized data</td>
     </tr>
     <tr align="center">
         <td>Declaration</td>
