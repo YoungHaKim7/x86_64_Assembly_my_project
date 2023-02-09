@@ -425,6 +425,11 @@ http://www.egr.unlv.edu/~ed/assembly64.pdf
 
 <br>
 
+# Computer Architecture(Page 7)
+
+![1](https://user-images.githubusercontent.com/67513038/217710708-7140b1d9-2685-4a33-966d-3c19ca9af463.png)
+
+
 # CPU Block Diagram(Page 15)
 
 ```mermaid
