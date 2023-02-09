@@ -607,7 +607,7 @@ value of a byte sized variables is defined as 500, it would generate an assemble
 
 <br>
 
-# BBS Section(Page35) - All uninitialized variables
+# BSS Section(Page35) - All uninitialized variables
 
 Uninitialized data is declared in the "section .bss" section.
 
@@ -615,7 +615,7 @@ The supported data types are as follows:
 
 <table border="1">
     <tr>
-    <td colspan="2" align="center">section .bbs<br>Uninitialized data</td>
+    <td colspan="2" align="center">section .bss<br>Uninitialized data</td>
     </tr>
     <tr align="center">
         <td>Declaration</td>
