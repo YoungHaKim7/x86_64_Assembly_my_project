@@ -166,6 +166,7 @@ https://doc.rust-lang.org/rust-by-example/unsafe/asm.html
 <hr>
 
 # Assembly 기초 basic<a href="https://en.wikipedia.org/wiki/Assembly_language"><img align="left" alt="assembly" width="39px" src="https://user-images.githubusercontent.com/67513038/210325356-f21c646d-6ef1-47
+
 -ac42-53f0b5e149ca.png"></a>
 
 # Bootsector Game From Scratch - Space Invaders (x86 asm) Game만들기(Assembly로)
@@ -429,6 +430,134 @@ http://www.egr.unlv.edu/~ed/assembly64.pdf
 </table>
 
 http://www.egr.unlv.edu/~ed/assembly64.pdf
+
+<br>
+
+# Stack Pointer Register (RSP)
+
+- Stack Pointer Register
+
+<table border="1">
+    <tr>
+    <td colspan="3" align="center"></td>
+    </tr>
+    <tr align="center">
+        <td>Stack Pointer Register</td>
+        <td></td>
+        <td>RSP</td>
+    </tr>
+</table>
+
+- One of the CPU registers, rsp, is used to point to the current top of the stack. The rsp
+  register should not be used for data or other uses. Additional information regarding the
+  stack and stack operations is provided in Chapter 9, Process Stack.
+
+# Base Pointer Register (RBP)
+
+<table border="1">
+    <tr>
+    <td colspan="3" align="center"></td>
+    </tr>
+    <tr align="center">
+        <td>Base Pointer Register</td>
+        <td></td>
+        <td>RBP</td>
+    </tr>
+</table>
+
+- One of the CPU registers, rbp, is used as a base pointer during function calls. The rbp
+  register should not be used for data or other uses. Additional information regarding the
+  functions and function calls is provided in Chapter 12, Functions.
+
+# Instruction Pointer Register (RIP)
+
+<table border="1">
+    <tr>
+    <td colspan="3" align="center"></td>
+    </tr>
+    <tr align="center">
+        <td>Instruction Pointer Register
+</td>
+        <td></td>
+        <td>RIP</td>
+    </tr>
+</table>
+
+- In addition to the GPRs, there is a special register, rip, which is used by the CPU to
+  point to the next instruction to be executed. Specifically, since the rip points to the
+  next instruction, that means the instruction being pointed to by rip, and shown in the
+  debugger, has not yet been executed. This is an important distinction which can be
+  confusing when reviewing code in a debugger.
+
+# Flag Register (rFlags)
+
+- The flag register, rFlags, is used for status and CPU control information
+
+- This register stores status information about the instruction that was just
+  executed. Of the 64-bits in the rFlag register, many are reserved for future use.
+
+<table border="1">
+    <tr>
+    <td colspan="4" align="center">Flag Register (rFlags)</td>
+    </tr>
+    <tr align="center">
+        <td>Name</td>
+        <td>Symbol</td>
+        <td>Bit</td>
+        <td>Use</td>
+    </tr>
+    <tr align="center">
+        <td>Carry</td>
+        <td>CF</td>
+        <td>0</td>
+        <td>Used to indicate if the previous operation
+resulted in a carry.</td>
+    </tr>
+    <tr align="center">
+        <td>Parity</td>
+        <td>PF</td>
+        <td>2</td>
+        <td>Used to indicate if the last byte has an even
+number of 1's (i.e., even parity). </td>
+    </tr>
+    <tr align="center">
+        <td>Adjust</td>
+        <td>AF</td>
+        <td>4</td>
+        <td>Used to support Binary Coded Decimal
+operations.</td>
+    </tr>
+    <tr align="center">
+        <td>Zero</td>
+        <td>ZF</td>
+        <td>6</td>
+        <td>Used to indicate if the previous operation
+resulted in a zero result.</td>
+    </tr>
+    <tr align="center">
+        <td>Sign</td>
+        <td>SF</td>
+        <td>7</td>
+        <td>Used to indicate if the result of the
+previous operation resulted in a 1 in the
+most significant bit (indicating negative in
+the context of signed data).</td>
+    </tr>
+    <tr align="center">
+        <td>Direction</td>
+        <td>DF</td>
+        <td>10</td>
+        <td>Used to specify the direction (increment or
+decrement) for some string operations.</td>
+    </tr>
+    <tr align="center">
+        <td>Overflow</td>
+        <td>OF</td>
+        <td>11</td>
+        <td>Used to indicate if the previous operation
+resulted in an overflow.</td>
+    </tr>
+</table>
 
 <br>
 
