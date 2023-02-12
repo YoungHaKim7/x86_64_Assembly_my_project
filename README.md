@@ -598,14 +598,14 @@ ex)
 
 section .data
 
-bVar     db      10             ; byte variable
-cVar     db      "H"            ; single character
-strng    db      "Hello World"  ; string
-wVar     dw      5000           ; 16-bit variable
-dVar     dd      50000          ; 32-bit variable
-arr      dd      100, 200, 300  ; 3 element array
-flt1     dd      3.14159        ; 32-bit float
-qVar     dq      1000000000     ; 64-bit variable
+  bVar     db      10             ; byte variable
+  cVar     db      "H"            ; single character
+  strng    db      "Hello World"  ; string
+  wVar     dw      5000           ; 16-bit variable
+  dVar     dd      50000          ; 32-bit variable
+  arr      dd      100, 200, 300  ; 3 element array
+  flt1     dd      3.14159        ; 32-bit float
+  qVar     dq      1000000000     ; 64-bit variable
 
 ```
 
