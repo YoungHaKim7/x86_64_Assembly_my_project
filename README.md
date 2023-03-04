@@ -8,6 +8,10 @@
 
 <br>
 
+# x86-x64 명령어 레퍼런스 읽는 법
+
+https://modoocode.com/316
+
 # The Go tools for Windows + Assembler
 
 http://godevtool.com/
