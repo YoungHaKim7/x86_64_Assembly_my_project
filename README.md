@@ -1,3 +1,13 @@
+# rust_웹으로 어셈블리 보기Assembly
+
+https://rust.godbolt.org/
+
+- 뒤에 최적화 옵션
+
+```
+-C opt-level=3 --target i686-unknown-linux-gnu
+```
+
 # Vim \_ Assembly Highlight Syntax
 
 ```
