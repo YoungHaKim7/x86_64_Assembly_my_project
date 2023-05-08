@@ -1,3 +1,7 @@
+# become a gigachad assembly programmer in only 10 minutes (yes YOU! right now) | Low Level Learning
+
+https://youtu.be/6S5KRJv-7RU
+
 # x86_64 Linux Assembly
 
 https://youtube.com/playlist?list=PLetF-YjXm-sCH6FrTz4AQhfH6INDQvQSn
