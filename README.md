@@ -18,6 +18,12 @@ https://rust.godbolt.org/
 
 <hr>
 
+# 10분안에 익히는 x86 Assembly | x86 Assembly Crash Course | HackUCF
+
+https://youtu.be/75gBFiFtAb8?si=skDTgz3WiarSaKbY
+
+<hr>
+
 # x86asm.net
 
 http://ref.x86asm.net/coder64.html
