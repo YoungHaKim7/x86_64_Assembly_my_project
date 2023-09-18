@@ -18,6 +18,11 @@ https://rust.godbolt.org/
 
 <hr>
 
+# 3분안에 설명하는 Assembly Language
+
+- Assembly Language in 100 Seconds
+  - https://youtu.be/4gwYkEK0gOk?si=Eey3U0MpndLj1zPF
+
 # 10분안에 익히는 x86 Assembly | x86 Assembly Crash Course | HackUCF
 
 https://youtu.be/75gBFiFtAb8?si=skDTgz3WiarSaKbY
