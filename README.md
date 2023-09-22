@@ -18,6 +18,10 @@ https://rust.godbolt.org/
 
 <hr>
 
+# 외국 사람이 만든 x86_64 설명서 githug
+
+https://github.com/compilepeace/SHELLCODING_INTEL_x86-64/
+
 # 3분안에 설명하는 Assembly Language
 
 - Assembly Language in 100 Seconds
