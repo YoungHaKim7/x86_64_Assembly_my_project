@@ -16,6 +16,15 @@ https://rust.godbolt.org/
 
 ```
 
+# vim tab setting
+
+```
+set tabstop=4
+set shiftwidth=4
+```
+
+<hr>
+
 <hr>
 
 # 외국 사람이 만든 x86_64 설명서 githug
