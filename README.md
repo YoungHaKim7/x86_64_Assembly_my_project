@@ -324,7 +324,13 @@ http://www.egr.unlv.edu/~ed/assembly64.pdf
 
 # General Purpose Registers(GPRs) page 10
 
+- General-purpose register layout
+ - The x86-64 general-purpose registers are 
+   - aliased: each has multiple names, which refer to overlapping bytes in the register.
 <table border="1">
+    <tr>
+    <td colspan="8" align="center">General-purpose register layout</td>
+    </tr>
     <tr>
     <td colspan="8" align="center">rax<br><-- 64 bits --></td>
     </tr>
