@@ -355,6 +355,26 @@ http://www.egr.unlv.edu/~ed/assembly64.pdf
         <td>ah<br><-- 8-bits --></td>
         <td>al<br><-- 8-bits --></td>
     </tr>
+    <tr align="center">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr align="center" border="3">
+        <td border="3">Byte 7</td>
+        <td>Byte 6</td>
+        <td>Byte 5</td>
+        <td>Byte 4</td>
+        <td>Byte 3</td>
+        <td>Byte 2</td>
+        <td>Byte 1</td>
+        <td>Byte 0</td>
+    </tr>
 </table>
 
 <br>
