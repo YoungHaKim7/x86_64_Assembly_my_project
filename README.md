@@ -33,7 +33,9 @@ set shiftwidth=4
 
 <hr>
 
- To debug NASM you might want to use DDD. The following course teaches assembly for Intel/Linux using NASM and DDD, you might want to have a look at it as you might find it helpful:
+# To debug NASM you might want to use DDD.
+
+To debug NASM you might want to use DDD. The following course teaches assembly for Intel/Linux using NASM and DDD, you might want to have a look at it as you might find it helpful:
 
 Getting started with NASM and DDD --> https://www.youtube.com/watch?v=YyovCxsMVio
 
