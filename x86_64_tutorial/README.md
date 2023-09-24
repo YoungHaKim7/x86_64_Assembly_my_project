@@ -1,3 +1,7 @@
+# Nasm Tutorial
+
+https://cs.lmu.edu/~ray/notes/nasmtutorial/
+
 # become a gigachad assembly programmer in only 10 minutes (yes YOU! right now) | Low Level Learning
 
 https://youtu.be/6S5KRJv-7RU
