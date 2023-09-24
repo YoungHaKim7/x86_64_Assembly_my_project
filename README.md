@@ -606,105 +606,122 @@ resulted in an overflow.</td>
 <table border="1">
     <tr>
     <tr align="center">
-        <td colspan="4">Number</td>
+        <td colspan="5">Number</td>
         <td>Width<br>(bits)</td>
         <td>Names(s)</td>
         <td>Purpose</td>
+        <td>★</td>
     </tr>
     <tr align="center">
-        <td colspan="4"><em><mark>16</mark></em></td>
+        <td colspan="5"><em><mark>16</mark></em></td>
         <td><em><mark>64</mark></em></td>
         <td><em><mark>(many)</em></mark></td>
         <td><em><mark>General-purpose registers</mark></em></td>
+        <td>★</td>
     </tr>
     <tr align="center">
-        <td colspan="4">6</td>
+        <td colspan="5">6</td>
         <td>16</td>
         <td>%ss,%[c-g]s</td>
         <td>Segment registers</td>
+        <td></td>
     </tr>
     <tr align="center">
-        <td colspan="4"><em><mark>1</mark></em></td>
+        <td colspan="5"><em><mark>1</mark></em></td>
         <td><em><mark>64</mark></em></td>
         <td><em><mark>RFLAGS</em></mark></td>
         <td><em><mark>Flags register</mark></em></td>
+        <td>★</td>
     </tr>
     <tr align="center">
-        <td colspan="4"><em><mark>1</mark></em></td>
+        <td colspan="5"><em><mark>1</mark></em></td>
         <td><em><mark>64</mark></em></td>
         <td><em><mark>%rip</em></mark></td>
         <td><em><mark>Instruction pointer register</mark></em></td>
+        <td>★</td>
     </tr>
     <tr align="center">
-        <td colspan="4">7</td>
+        <td colspan="5">7</td>
         <td>64</td>
         <td>%cr[0-4,8], %xcr0</td>
         <td>Control registers</td>
+        <td></td>
     </tr>
     <tr align="center">
-        <td colspan="4">8</td>
+        <td colspan="5">8</td>
         <td>64</td>
         <td>%mm[0-7]</td>
         <td>MMX registers</td>
+        <td></td>
     </tr>
     <tr align="center">
-        <td colspan="4">1</td>
+        <td colspan="5">1</td>
         <td>32</td>
         <td>mxcsr</td>
         <td>SSE2 control register</td>
+        <td></td>
     </tr>
     <tr align="center">
-        <td colspan="4" rowspan="2"><em><mark>16</mark></em></td>
+        <td colspan="5" rowspan="2"><em><mark>16</mark></em></td>
         <td><em><mark>128</mark></em></td>
         <td><em><mark>%xmm[0-15]</em></mark></td>
         <td><em><mark>XMM registers (for SSE)</mark></em></td>
+        <td>★</td>
     </tr>
     <tr align="center">
         <td><em><mark>256</mark></em></td>
         <td><em><mark>%ymm[0-15]</em></mark></td>
         <td><em><mark>YMM registers (for AVX)</mark></em></td>
+        <td>★</td>
     </tr>
     <tr align="center">
-        <td colspan="4">8</td>
+        <td colspan="5">8</td>
         <td>80</td>
         <td>%st([0-7])</td>
         <td>x87 FPU data registers</td>
+        <td></td>
     </tr>
     <tr align="center">
-        <td colspan="4">1</td>
+        <td colspan="5">1</td>
         <td>16</td>
         <td>x87 CW</td>
         <td>x87 FPU control register</td>
+        <td></td>
     </tr>
     <tr align="center">
-        <td colspan="4">1</td>
+        <td colspan="5">1</td>
         <td>16</td>
         <td>x87 SW</td>
         <td>x87 FPU status register</td>
+        <td></td>
     </tr>
     <tr align="center">
-        <td colspan="4">1</td>
+        <td colspan="5">1</td>
         <td>48</td>
         <td></td>
         <td>x87 FPU instruction<br>pointer register</td>
+        <td></td>
     </tr>
     <tr align="center">
-        <td colspan="4">1</td>
+        <td colspan="5">1</td>
         <td>48</td>
         <td></td>
         <td>x87 FPU data operand<br>pointer register</td>
+        <td></td>
     </tr>
     <tr align="center">
-        <td colspan="4">1</td>
+        <td colspan="5">1</td>
         <td>16</td>
         <td></td>
         <td>x87 FPU tag register</td>
+        <td></td>
     </tr>
     <tr align="center">
-        <td colspan="4">1</td>
+        <td colspan="5">1</td>
         <td>11</td>
         <td></td>
         <td>x87 FPU opcode register</td>
+        <td></td>
     </tr>
 
 </table>
