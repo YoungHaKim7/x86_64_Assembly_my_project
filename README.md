@@ -22,6 +22,10 @@ https://rust.godbolt.org/
 
 https://github.com/compilepeace/SHELLCODING_INTEL_x86-64/
 
+# Debugging BIOS Assembly Visually with Visual Studio Code and GDB [Ep 13]
+
+https://youtu.be/aMSFaAcup50?si=91Qr4sMRqIsa5_TT
+
 # 3분안에 설명하는 Assembly Language
 
 - Assembly Language in 100 Seconds
