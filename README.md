@@ -150,8 +150,14 @@ Setting up nasm (2.15.05-1) ...
 Processing triggers for man-db (2.10.2-1) ...
 ```
 
-# ASM Sample
+# ASM Build & Execution
 
+- elf64
+```
+nasm -felf64 add.asm && ld add.o && ./a.out
+```
+
+- elf32
 ```
 $ nasm -f elf32 -o hello.o hello.asm
 
