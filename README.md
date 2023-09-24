@@ -604,19 +604,31 @@ http://www.egr.unlv.edu/~ed/assembly64.pdf
 
 # Flag Register (rFlags)
 
+- Assembly Language & Computer Architecture | MIT OpenCourseWare(33min05sec)
+  - https://youtu.be/L1ung0wil9Y?si=rPsC0iQicpE7iy2i 
+ 
+
 - The flag register, rFlags, is used for status and CPU control information
 
 - This register stores status information about the instruction that was just
   executed. Of the 64-bits in the rFlag register, many are reserved for future use.
 
+- Arithmetic and logic operations update status flags in the RFLAGS register.
+
+```s
+decq %rbx   
+jne .LBB7_1
+```
+- ```decq %rbx     ```; Decrement ```%rbx```, and set ZF if the result is 0.
+
 <table border="1">
     <tr>
-    <td colspan="4" align="center">Flag Register (rFlags)</td>
+    <td colspan="4" align="center">Flag Register (rFlags)<br>RFLAGS Register</td>
     </tr>
     <tr align="center">
-        <td>Name</td>
-        <td>Symbol</td>
-        <td>Bit</td>
+        <td>Name<br>Description</td>
+        <td>Symbol<br>or<br>(Abbreviation)</td>
+        <td>Bit(s)</td>
         <td>Use</td>
     </tr>
     <tr align="center">
@@ -627,6 +639,12 @@ http://www.egr.unlv.edu/~ed/assembly64.pdf
 resulted in a carry.</td>
     </tr>
     <tr align="center">
+        <td>Reserved</td>
+        <td></td>
+        <td>1</td>
+        <td></td>
+    </tr>
+    <tr align="center">
         <td>Parity</td>
         <td>PF</td>
         <td>2</td>
@@ -634,11 +652,23 @@ resulted in a carry.</td>
 number of 1's (i.e., even parity). </td>
     </tr>
     <tr align="center">
+        <td>Reserved</td>
+        <td></td>
+        <td>3</td>
+        <td></td>
+    </tr>
+    <tr align="center">
         <td>Adjust</td>
         <td>AF</td>
         <td>4</td>
         <td>Used to support Binary Coded Decimal
 operations.</td>
+    </tr>
+    <tr align="center">
+        <td>Reserved</td>
+        <td></td>
+        <td>5</td>
+        <td></td>
     </tr>
     <tr align="center">
         <td>Zero</td>
@@ -657,6 +687,18 @@ most significant bit (indicating negative in
 the context of signed data).</td>
     </tr>
     <tr align="center">
+        <td>Trap</td>
+        <td>TF</td>
+        <td>8</td>
+        <td></td>
+    </tr>
+    <tr align="center">
+        <td>Interrupt<br>enable</td>
+        <td>IF</td>
+        <td>9</td>
+        <td></td>
+    </tr>
+    <tr align="center">
         <td>Direction</td>
         <td>DF</td>
         <td>10</td>
@@ -669,6 +711,12 @@ decrement) for some string operations.</td>
         <td>11</td>
         <td>Used to indicate if the previous operation
 resulted in an overflow.</td>
+    </tr>
+    <tr align="center">
+        <td>System flags or<br>reserved</td>
+        <td></td>
+        <td>12 - 63</td>
+        <td></td>
     </tr>
 </table>
 
@@ -956,6 +1004,61 @@ https://youtu.be/L1ung0wil9Y?si=XEBdCmwbP48LLYOE
         <td>call, ret</td>
     </tr>
 </table>
+
+
+# Condition Codes
+
+<table border="1">
+    <tr>
+    <td colspan="3" align="center">Condition Codes</td>
+    </tr>
+    <tr align="center">
+        <td>Condition code</td>
+        <td>Translation</td>
+        <td>RFLAGS status flags<br>checked</td>
+    </tr>
+    <tr align="center">
+        <td>a</td>
+        <td>if above</td>
+        <td>CF = 0 and ZF = 0</td>
+    </tr>
+    <tr align="center">
+        <td>ae</td>
+        <td>if above or equal</td>
+        <td>CF = 0</td>
+    </tr>
+    <tr align="center">
+        <td>c</td>
+        <td>on carry</td>
+        <td>CF = 1</td>
+    </tr>
+    <tr align="center">
+        <td>e</td>
+        <td>if equal</td>
+        <td>ZF = 1</td>
+    </tr>
+    <tr align="center">
+        <td>ge</td>
+        <td>if greater or equal</td>
+        <td>SF = OF</td>
+    </tr>
+    <tr align="center">
+        <td>ne</td>
+        <td>if not equal</td>
+        <td>ZF = 0</td>
+    </tr>
+    <tr align="center">
+        <td>o</td>
+        <td>on overflow</td>
+        <td>OF = 1</td>
+    </tr>
+    <tr align="center">
+        <td>z</td>
+        <td>if zero</td>
+        <td>ZF = 1</td>
+    </tr>
+</table>
+
 
 # CPU Block Diagram(Page 15)
 
