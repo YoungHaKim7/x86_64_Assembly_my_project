@@ -59,7 +59,7 @@ https://www.reddit.com/r/asm/comments/ba4qi9/debugging_nasm/
 
 <hr>
 
-# 외국 사람이 만든 x86_64 설명서 githug
+# 외국 사람이 만든 x86_64 설명서 github 예시 좋다.!
 
 https://github.com/compilepeace/SHELLCODING_INTEL_x86-64/
 
