@@ -4,6 +4,22 @@
 nasm -felf64 add.asm && ld add.o && ./a.out
   
 ```
+- ASM Sample (elf32)
+
+```
+$ nasm -f elf32 -o hello.o hello.asm
+
+$ ls
+hello.asm  hello.o
+
+$ ld -m elf_i386 -o hello hello.o
+
+$ ls
+hello  hello.asm  hello.o
+
+$ ./hello
+Hello World!
+```
 
 # Nasm Tutorial
 
