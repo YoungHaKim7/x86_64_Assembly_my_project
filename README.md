@@ -599,11 +599,179 @@ resulted in an overflow.</td>
 
 <br>
 
+# Common x86-64 Registers
+- Assembly Language & Computer Architecture(15min33sec)
+  - https://youtu.be/L1ung0wil9Y?si=GCVZvxM4-omcrNM-
+
+<table border="1">
+    <tr>
+    <tr align="center">
+        <td colspan="4">Number</td>
+        <td>Width<br>(bits)</td>
+        <td>Names(s)</td>
+        <td>Purpose</td>
+    </tr>
+    <tr align="center">
+        <td colspan="4"><em><mark>16</mark></em></td>
+        <td><em><mark>64</mark></em></td>
+        <td><em><mark>(many)</em></mark></td>
+        <td><em><mark>General-purpose registers</mark></em></td>
+    </tr>
+    <tr align="center">
+        <td colspan="4">6</td>
+        <td>16</td>
+        <td>%ss,%[c-g]s</td>
+        <td>Segment registers</td>
+    </tr>
+    <tr align="center">
+        <td colspan="4"><em><mark>1</mark></em></td>
+        <td><em><mark>64</mark></em></td>
+        <td><em><mark>RFLAGS</em></mark></td>
+        <td><em><mark>Flags register</mark></em></td>
+    </tr>
+    <tr align="center">
+        <td colspan="4"><em><mark>1</mark></em></td>
+        <td><em><mark>64</mark></em></td>
+        <td><em><mark>%rip</em></mark></td>
+        <td><em><mark>Instruction pointer register</mark></em></td>
+    </tr>
+    <tr align="center">
+        <td colspan="4">7</td>
+        <td>64</td>
+        <td>%cr[0-4,8], %xcr0</td>
+        <td>Control registers</td>
+    </tr>
+    <tr align="center">
+        <td colspan="4">8</td>
+        <td>64</td>
+        <td>%mm[0-7]</td>
+        <td>MMX registers</td>
+    </tr>
+    <tr align="center">
+        <td colspan="4">1</td>
+        <td>32</td>
+        <td>mxcsr</td>
+        <td>SSE2 control register</td>
+    </tr>
+    <tr align="center">
+        <td colspan="4" rowspan="2"><em><mark>16</mark></em></td>
+        <td><em><mark>128</mark></em></td>
+        <td><em><mark>%xmm[0-15]</em></mark></td>
+        <td><em><mark>XMM registers (for SSE)</mark></em></td>
+    </tr>
+    <tr align="center">
+        <td><em><mark>256</mark></em></td>
+        <td><em><mark>%ymm[0-15]</em></mark></td>
+        <td><em><mark>YMM registers (for AVX)</mark></em></td>
+    </tr>
+    <tr align="center">
+        <td colspan="4">8</td>
+        <td>80</td>
+        <td>%st([0-7])</td>
+        <td>x87 FPU data registers</td>
+    </tr>
+    <tr align="center">
+        <td colspan="4">1</td>
+        <td>16</td>
+        <td>x87 CW</td>
+        <td>x87 FPU control register</td>
+    </tr>
+    <tr align="center">
+        <td colspan="4">1</td>
+        <td>16</td>
+        <td>x87 SW</td>
+        <td>x87 FPU status register</td>
+    </tr>
+    <tr align="center">
+        <td colspan="4">1</td>
+        <td>48</td>
+        <td></td>
+        <td>x87 FPU instruction<br>pointer register</td>
+    </tr>
+    <tr align="center">
+        <td colspan="4">1</td>
+        <td>48</td>
+        <td></td>
+        <td>x87 FPU data operand<br>pointer register</td>
+    </tr>
+    <tr align="center">
+        <td colspan="4">1</td>
+        <td>16</td>
+        <td></td>
+        <td>x87 FPU tag register</td>
+    </tr>
+    <tr align="center">
+        <td colspan="4">1</td>
+        <td>11</td>
+        <td></td>
+        <td>x87 FPU opcode register</td>
+    </tr>
+
+</table>
+
+
 # Computer Architecture(Page 7)
 
 ![1](https://user-images.githubusercontent.com/67513038/217710708-7140b1d9-2685-4a33-966d-3c19ca9af463.png)
 
 <br>
+
+# Common x86-64 Opcodes
+- Assembly Language & Computer Architecture(25min33sec)
+  - https://youtu.be/L1ung0wil9Y?si=GCVZvxM4-omcrNM-
+
+<table border="1">
+    <tr>
+    <td colspan="4" align="center">Opcodes</td>
+    </tr>
+    <tr align="center">
+        <td colspan="2">Type of peration</td>
+        <td>Example</td>
+    </tr>
+    <tr align="center">
+        <td rowspan="4">Data<br>movement</td>
+        <td>Move</td>
+        <td>mov</td>
+    </tr>
+    <tr align="center">
+        <td>Conditional<br>move</td>
+        <td>cmov</td>
+    </tr>
+    <tr align="center">
+        <td>Sign or<br>zero extension</td>
+        <td>movs, movz</td>
+    </tr>
+    <tr align="center">
+        <td>Stack</td>
+        <td>push, pop</td>
+    </tr>
+    <tr align="center">
+        <td rowspan="3">Arithmetic <br>and logic</td>
+        <td>Integer<br>arithmetric</td>
+        <td>add, sub, mul, imul,div, idiv,<br>lea,sal, sar, shl, shr, rol,<br>ror, inc, dec,neg</td>
+    </tr>
+    <tr align="center">
+        <td>Binary logic</td>
+        <td>and, or, xor, not</td>
+    </tr>
+    <tr align="center">
+        <td>Boolean logic</td>
+        <td>test, cmp</td>
+    </tr>
+    <tr align="center">
+        <td rowspan="3">Control<br>transfer</td>
+        <td>Unconditional<br>jump</td>
+        <td>jmp</td>
+    </tr>
+    <tr align="center">
+        <td>Conditional<br>jump</td>
+        <td>j&lt;condition&gt;</td>
+    </tr>
+    <tr align="center">
+        <td>Subroutines</td>
+        <td>call, ret</td>
+    </tr>
+</table>
 
 # CPU Block Diagram(Page 15)
 
