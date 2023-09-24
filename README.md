@@ -1,3 +1,11 @@
+# Assembly Debugging
+
+https://www.gnu.org/software/ddd/manual/
+
+https://github.com/BetelGeuseee/x86-assembly-yasm
+
+<hr>
+
 # rust_웹으로 어셈블리 보기Assembly
 
 https://rust.godbolt.org/
