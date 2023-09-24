@@ -727,6 +727,98 @@ resulted in an overflow.</td>
 </table>
 
 
+# x86-64 Data Types
+
+<table border="1">
+    <tr>
+    <td colspan="5" align="center">x86-64 Data Types</td>
+    </tr>
+    <tr align="center">
+        <td>C declaration</td>
+        <td>C<br>constant</td>
+        <td>x86-64<br>size<br>(bytes)</td>
+        <td>Assembly<br>suffix</td>
+        <td>x-86-64<br>data type</td>
+    </tr>
+    <tr align="center">
+        <td>char</td>
+        <td>'c'</td>
+        <td>1</td>
+        <td>b</td>
+        <td>Byte</td>
+    </tr>
+    <tr align="center">
+        <td>short</td>
+        <td>172</td>
+        <td>2</td>
+        <td>w</td>
+        <td>Word</td>
+    </tr>
+    <tr align="center">
+        <td>int</td>
+        <td>172</td>
+        <td>4</td>
+        <td>l or d</td>
+        <td>Double word</td>
+    </tr>
+    <tr align="center">
+        <td>unsigned<br>int</td>
+        <td>172U</td>
+        <td>4</td>
+        <td>l or d</td>
+        <td>Double word</td>
+    </tr>
+    <tr align="center">
+        <td>long</td>
+        <td>172L</td>
+        <td>8</td>
+        <td>q</td>
+        <td>Quad word</td>
+    </tr>
+    <tr align="center">
+        <td>unsigned long</td>
+        <td>172UL</td>
+        <td>8</td>
+        <td>q</td>
+        <td>Quad word</td>
+    </tr>
+    <tr align="center">
+        <td>char *</td>
+        <td>"6.172"</td>
+        <td>8</td>
+        <td>q</td>
+        <td>Quad word</td>
+    </tr>
+    <tr align="center">
+        <td>float</td>
+        <td>6.172F</td>
+        <td>4</td>
+        <td>s</td>
+        <td>Single precision</td>
+    </tr>
+    <tr align="center">
+        <td>double</td>
+        <td>6.172</td>
+        <td>8</td>
+        <td>d</td>
+        <td>Double precision</td>
+    </tr>
+    <tr align="center">
+        <td>long double</td>
+        <td>6.172L</td>
+        <td>16(10)</td>
+        <td>t</td>
+        <td>Extended precision</td>
+    </tr>
+</table>
+
+28min30sec
+https://youtu.be/L1ung0wil9Y?si=XEBdCmwbP48LLYOE
+
+<br>
+
+<hr>
+
 # Computer Architecture(Page 7)
 
 ![1](https://user-images.githubusercontent.com/67513038/217710708-7140b1d9-2685-4a33-966d-3c19ca9af463.png)
