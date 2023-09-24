@@ -25,6 +25,30 @@ set shiftwidth=4
 
 <hr>
 
+ To debug NASM you might want to use DDD. The following course teaches assembly for Intel/Linux using NASM and DDD, you might want to have a look at it as you might find it helpful:
+
+Getting started with NASM and DDD --> https://www.youtube.com/watch?v=YyovCxsMVio
+
+Assembly integer arithmetic --> https://www.youtube.com/watch?v=-KfZaJclqk4
+
+Assembly floating-point arithmetic --> https://www.youtube.com/watch?v=n1gIv40VSgA
+
+Assembly control instructions --> https://www.youtube.com/watch?v=s38DcLv1wYk
+
+Assembly and process stack --> https://www.youtube.com/watch?v=7nPru8b7SjY
+
+Assembly functions --> https://www.youtube.com/watch?v=QOPOeDPlNZo
+
+Stack buffer overflow --> https://www.youtube.com/watch?v=BW2obfJtkPw
+
+System services --> https://www.youtube.com/watch?v=qzTlkJsq3Xo 
+
+https://www.reddit.com/r/asm/comments/ba4qi9/debugging_nasm/
+
+<hr>
+
+<br>
+
 <hr>
 
 # 외국 사람이 만든 x86_64 설명서 githug
