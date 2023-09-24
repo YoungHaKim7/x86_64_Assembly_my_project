@@ -181,6 +181,8 @@ $ ./hello
 Hello World!
 
 ```
+- Nasm Tutorial
+  - https://cs.lmu.edu/~ray/notes/nasmtutorial/
 
 # ASM hello.asm
 
