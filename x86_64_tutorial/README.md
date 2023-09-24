@@ -25,6 +25,10 @@ Hello World!
 
 https://cs.lmu.edu/~ray/notes/nasmtutorial/
 
+# 외국 사람이 만든 CS12 어셈블리 예시가 많아서 좋다. 
+
+https://github.com/stuart-srjc/CS12-Labs
+
 # become a gigachad assembly programmer in only 10 minutes (yes YOU! right now) | Low Level Learning
 
 https://youtu.be/6S5KRJv-7RU
