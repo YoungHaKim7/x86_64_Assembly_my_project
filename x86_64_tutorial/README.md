@@ -1,3 +1,10 @@
+# build & execution
+
+```
+nasm -felf64 add.asm && ld add.o && ./a.out
+  
+```
+
 # Nasm Tutorial
 
 https://cs.lmu.edu/~ray/notes/nasmtutorial/
