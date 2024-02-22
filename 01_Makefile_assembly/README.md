@@ -17,7 +17,7 @@ clean:
 ```
 
 
-```x86asm
+```asm
 
 global      _start
 
