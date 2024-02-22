@@ -1,8 +1,12 @@
+- https://cs.lmu.edu/~ray/notes/nasmtutorial/
+
+<hr>
+
 # build & execution
 
 ```
 nasm -felf64 add.asm && ld add.o && ./a.out
-  
+
 ```
 - ASM Sample (elf32)
 
@@ -25,7 +29,7 @@ Hello World!
 
 https://cs.lmu.edu/~ray/notes/nasmtutorial/
 
-# 외국 사람이 만든 CS12 어셈블리 예시가 많아서 좋다. 
+# 외국 사람이 만든 CS12 어셈블리 예시가 많아서 좋다.
 
 https://github.com/stuart-srjc/CS12-Labs
 
