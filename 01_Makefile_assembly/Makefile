@@ -1,11 +1,11 @@
 r:
-		rm -rf out
-		mkdir out
+		rm -rf target
+		mkdir target
 		nasm -felf64 src/main.asm
-		mv ./src/main.o ./out/.
-		ld ./out/main.o
-		mv a.out out/.
-		./out/a.out
+		mv ./src/main.o ./target/.
+		ld ./target/main.o
+		mv a.out target/.
+		./target/a.out
 
 clean:
-		rm -rf out
+		rm -rf target
