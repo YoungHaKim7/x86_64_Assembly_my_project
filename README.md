@@ -60,6 +60,15 @@ set shiftwidth=4
 
 - https://www.reddit.com/r/neovim/s/XAuQM98VY6
 
+- https://github.com/bergercookie/asm-lsp
+  - Using cargo
+    - Install using the cargo package manager, either from crates.io or from github:
+```
+cargo install asm-lsp
+# or to get the latest version from github
+cargo install --git https://github.com/bergercookie/asm-lsp
+```
+
 <hr>
 
 # x86 and x86_64 Assembly(VSCode Extension)
