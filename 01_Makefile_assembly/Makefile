@@ -1,11 +1,18 @@
+NASM = nasm
+
+SOURCE_ASM = ./src/main.asm
+SOURCE_ASM_OBJ = ./target/main.o
+
+TARGET = ./target/main
+LDFLAGS_COMMON = -felf64
+
 r:
 		rm -rf target
 		mkdir target
-		nasm -felf64 src/main.asm
+		$(NASM) $(LDFLAGS_COMMON) $(SOURCE_ASM)
 		mv ./src/main.o ./target/.
-		ld ./target/main.o
-		mv a.out target/.
-		./target/a.out
+		ld -o $(TARGET) $(SOURCE_ASM_OBJ)
+		$(TARGET)
 
 clean:
 		rm -rf target
