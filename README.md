@@ -74,6 +74,9 @@ cargo install --git https://github.com/bergercookie/asm-lsp
 
 - https://marketplace.visualstudio.com/items?itemName=13xforever.language-x86-64-assembly
 
+- ASM Code Lens
+  - https://marketplace.visualstudio.com/items?itemName=maziac.asm-code-lens
+
 <hr>
 
 # To debug NASM you might want to use DDD.
