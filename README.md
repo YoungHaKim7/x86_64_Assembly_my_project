@@ -23,6 +23,10 @@ https://www.gnu.org/software/ddd/manual/
 
 https://github.com/BetelGeuseee/x86-assembly-yasm
 
+# 내가 공부하려고 정리중(x86_64_Assembly)
+
+https://youtube.com/playlist?list=PLcMveqN_07mb4_M06LrKJK5LHVKGFyICB&si=7PUFD9S4OuLJQCHv
+
 <hr>
 
 # rust_웹으로 어셈블리 보기Assembly
