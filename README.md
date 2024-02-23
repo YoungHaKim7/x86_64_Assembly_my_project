@@ -1,4 +1,8 @@
-# 어셈블러의 비교
+# x86_64_Assembly Language Programming with Ubuntu(eBook)
+
+- http://www.egr.unlv.edu/~ed/assembly64.pdf
+
+## 어셈블러의 비교
 - https://ko.wikipedia.org/wiki/%EC%96%B4%EC%85%88%EB%B8%94%EB%9F%AC%EC%9D%98_%EB%B9%84%EA%B5%90
 
 <hr>
