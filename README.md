@@ -56,6 +56,12 @@ set shiftwidth=4
 
 <hr>
 
+# x86 and x86_64 Assembly(VSCode Extension)
+
+- https://marketplace.visualstudio.com/items?itemName=13xforever.language-x86-64-assembly
+
+<hr>
+
 # To debug NASM you might want to use DDD.
 
 To debug NASM you might want to use DDD. The following course teaches assembly for Intel/Linux using NASM and DDD, you might want to have a look at it as you might find it helpful:
