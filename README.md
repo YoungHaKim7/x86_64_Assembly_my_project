@@ -39,19 +39,18 @@ https://rust.godbolt.org/
 -C opt-level=3 --target i686-unknown-linux-gnu
 ```
 
+# vim tab setting
+
+```
+set tabstop=4
+set shiftwidth=4
+```
 # Vim \_ Assembly Highlight Syntax
 
 ```
 
 :set ft=nasm  " assembly highlight syntax
 
-```
-
-# vim tab setting
-
-```
-set tabstop=4
-set shiftwidth=4
 ```
 
 <hr>
