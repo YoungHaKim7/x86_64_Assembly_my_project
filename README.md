@@ -56,6 +56,12 @@ set shiftwidth=4
 
 <hr>
 
+# NeoVim(asm-lsp)
+
+- https://www.reddit.com/r/neovim/s/XAuQM98VY6
+
+<hr>
+
 # x86 and x86_64 Assembly(VSCode Extension)
 
 - https://marketplace.visualstudio.com/items?itemName=13xforever.language-x86-64-assembly
