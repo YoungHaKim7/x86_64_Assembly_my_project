@@ -2,6 +2,7 @@
 
 - makefile
 ```makefile
+
 NASM = nasm
 
 SOURCE_ASM = ./src/main.asm
@@ -20,8 +21,7 @@ r:
 		$(TARGET)
 
 clean:
-		rm -rf target
-
+		rm -rf $(TARGET_FOLDER)
 ```
 
 

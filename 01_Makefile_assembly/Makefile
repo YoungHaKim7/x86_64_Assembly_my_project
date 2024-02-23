@@ -16,5 +16,4 @@ r:
 		$(TARGET)
 
 clean:
-		rm -rf target
-
+		rm -rf $(TARGET_FOLDER)
