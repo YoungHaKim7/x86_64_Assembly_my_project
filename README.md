@@ -7,6 +7,17 @@
 
 <hr>
 
+# CPU Instructions
+
+|General<br> Instruction|Function Call<br> Instructions|Stack<br> Instructions|
+|-|-|-|
+|mov<br>jmp<br>add<br>sub|call<br>ret|push<br>|
+
+- 출처 (29분 14초)
+  - https://youtu.be/krmxFEOaHss?si=HY4V-TzRjNQbdewx 
+
+<hr>
+
 # Mara Bos
 @m_ou_se
 ⚛️📋 I made an overview of the ARMv8 and x86-64 machine instructions for all the common atomic operations:
