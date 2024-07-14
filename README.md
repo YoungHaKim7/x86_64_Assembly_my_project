@@ -11,7 +11,7 @@
 
 |General<br> Instruction|Function Call<br> Instructions|Stack<br> Instructions|
 |-|-|-|
-|mov<br>jmp<br>add<br>sub|call<br>ret|push<br>|
+|mov<br>jmp<br>add<br>sub|call<br>ret|push<br>pop|
 
 - 출처 (29분 14초)
   - https://youtu.be/krmxFEOaHss?si=HY4V-TzRjNQbdewx 
