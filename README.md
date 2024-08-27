@@ -14,6 +14,8 @@
 
 - 어셈블리 비교하기 (x86_64 vs arm vs NASM 기타 등등)
   - [어셈블러의-비교](#어셈블러의-비교)
+    - [NASM넷와이드 어셈블러(Netwide Assembler, NASM)](https://ko.wikipedia.org/wiki/%EB%84%B7%EC%99%80%EC%9D%B4%EB%93%9C_%EC%96%B4%EC%85%88%EB%B8%94%EB%9F%AC)
+    - [WebAssembly??WASM(오픈 왓콤 어셈블러 (WASM)](https://en.wikipedia.org/wiki/WebAssembly)
   - [요즘 핫한 RISC-V](https://en.wikipedia.org/wiki/RISC-V)
 
 <hr>
