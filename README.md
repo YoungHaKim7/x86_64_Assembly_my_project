@@ -6,6 +6,12 @@
 
 <hr>
 
+- x86_64 Assembly Tutorial
+  - [x86_64_assembly-language-programming-with-ubuntu](#x86_64_assembly-language-programming-with-ubuntu)
+
+
+<hr>
+
 - 어셈블리 비교하기 (x86_64 vs arm vs NASM 기타 등등)
   - [어셈블러의-비교](#어셈블러의-비교)
   - [요즘 핫한 RISC-V](https://en.wikipedia.org/wiki/RISC-V)
