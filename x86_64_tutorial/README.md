@@ -29,6 +29,14 @@ Hello World!
 
 https://cs.lmu.edu/~ray/notes/nasmtutorial/
 
+<hr>
+
+# (fasm) Web in Native Assembly (Linux x86_64) | Tsoding Daily
+- https://youtu.be/b-q4QBy52AA?si=RCN1UAYRlo41sL-B
+
+
+<hr>
+
 # 외국 사람이 만든 CS12 어셈블리 예시가 많아서 좋다.
 
 https://github.com/stuart-srjc/CS12-Labs
