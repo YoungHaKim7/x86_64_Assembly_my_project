@@ -2,6 +2,12 @@
 
 <hr>
 
+# (Intel vs Arm 비교해서 굿) The Beauty of Assembly | Hussein Nasser
+- https://youtu.be/cOYK3nbpa2w?si=0vJfip1AMg-GEqp-
+
+
+<hr>
+
 # build & execution
 
 ```
