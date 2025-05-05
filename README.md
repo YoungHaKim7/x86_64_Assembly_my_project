@@ -21,8 +21,8 @@
 <hr>
 
 - Instructions
-  - [CPU Instructions]()
-  - [Top 10 Craziest Assembly Language Instructions | Creel]()
+  - [CPU Instructions](#cpu-instructions)
+  - [Top 10 Craziest Assembly Language Instructions | Creel](#top-10-craziest-assembly-language-instructions--creel)
 
 <hr />
 
