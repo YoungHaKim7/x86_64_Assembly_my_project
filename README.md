@@ -20,6 +20,12 @@
 
 <hr>
 
+- Instructions
+  - [CPU Instructions]()
+  - [Top 10 Craziest Assembly Language Instructions | Creel]()
+
+<hr />
+
 # x86_64_Assembly Language Programming with Ubuntu(eBook)
 
 - http://www.egr.unlv.edu/~ed/assembly64.pdf
@@ -37,6 +43,9 @@
 
 - 출처 (29분 14초)
   - https://youtu.be/krmxFEOaHss?si=HY4V-TzRjNQbdewx 
+
+# Top 10 Craziest Assembly Language Instructions | Creel
+- https://youtu.be/Wz_xJPN7lAY?si=Cq6u60ZGcuh35t0g
 
 <hr>
 
