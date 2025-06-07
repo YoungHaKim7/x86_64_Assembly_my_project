@@ -24,7 +24,7 @@
   - [CPU Instructions](#cpu-instructions)
   - [Top 10 Craziest Assembly Language Instructions | Creel](#top-10-craziest-assembly-language-instructions--creel)
 
-- [x86 and amd64 instruction reference](https://www.felixcloutier.com/x86/)
+- [외부링크) x86 and amd64 instruction reference](https://www.felixcloutier.com/x86/)
 
 <hr />
 
