@@ -27,63 +27,63 @@
     <td>32-bit</td>
     <td></td>
     <td></td>
-    <td colspan="2">EAX</td>
+    <td colspan="2">E<br />A<br />X</td>
     <td></td>
     <td></td>
-    <td colspan="2">ECX</td>
+    <td colspan="2">E<br />C<br />X</td>
     <td></td>
     <td></td>
-    <td colspan="2">EDX</td>
+    <td colspan="2">E<br />D<br />X</td>
     <td></td>
     <td></td>
-    <td colspan="2">EBX</td>
+    <td colspan="2">E<br />B<br />X</td>
     <td></td>
     <td></td>
-    <td colspan="2" style="background-color: #6b4ca0;">ESP</td>
+    <td colspan="2" style="background-color: #6b4ca0;">E<br />S<br />P</td>
     <td></td>
     <td></td>
-    <td colspan="2" style="background-color: #6b4ca0;">EBP</td>
+    <td colspan="2" style="background-color: #6b4ca0;">E<br />B<br />P</td>
     <td></td>
     <td></td>
-    <td colspan="2" >ESI</td>
+    <td colspan="2" >E<br />S<br />I</td>
     <td></td>
     <td></td>
-    <td colspan="2" >EDI</td>
+    <td colspan="2" >E<br />D<br />I</td>
   </tr>
   <tr style="background-color: #222; color: white;">
     <td>16-bit</td>
     <td></td>
     <td></td>
     <td></td>
-    <td>AX</td>
+    <td>A<br />X</td>
     <td></td>
     <td></td>
     <td></td>
-    <td>CX</td>
+    <td>C<br />X</td>
     <td></td>
     <td></td>
     <td></td>
-    <td>DX</td>
+    <td>D<br />X</td>
     <td></td>
     <td></td>
     <td></td>
-    <td>BX</td>
+    <td>B<br />X</td>
     <td></td>
     <td></td>
     <td></td>
-    <td style="background-color: #6b4ca0;">SP</td>
+    <td style="background-color: #6b4ca0;">S<br />P</td>
     <td></td>
     <td></td>
     <td></td>
-    <td style="background-color: #6b4ca0;">BP</td>
+    <td style="background-color: #6b4ca0;">B<br />P</td>
     <td></td>
     <td></td>
     <td></td>
-    <td>SI</td>
+    <td>S<br />I</td>
     <td></td>
     <td></td>
     <td></td>
-    <td>DI</td>
+    <td>D<br />I</td>
   </tr>
 </table>
 
