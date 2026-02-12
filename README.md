@@ -1169,6 +1169,8 @@ stateDiagram-v2
 
 ```
 
+<img width="658" height="680" alt="Image" src="https://github.com/user-attachments/assets/10b9a05c-8426-4046-9bbe-cd0079f8363a" />
+
 <br>
 
 # Memory Layout(Page17)
