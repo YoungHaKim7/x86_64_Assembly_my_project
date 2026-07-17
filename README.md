@@ -28,6 +28,19 @@
 
 <hr />
 
+- lsp
+  - zed extension
+    - https://github.com/DevBlocky/zed-asm
+  - https://github.com/bergercookie/asm-lsp
+```bash
+cargo install asm-lsp
+# or to get the latest version from github
+cargo install --git https://github.com/bergercookie/asm-lsp asm-lsp
+```
+
+
+<hr />
+
 # x86_64_Assembly Language Programming with Ubuntu(eBook)
 
 - http://www.egr.unlv.edu/~ed/assembly64.pdf
