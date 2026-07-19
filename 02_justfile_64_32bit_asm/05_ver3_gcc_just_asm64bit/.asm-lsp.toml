@@ -1,0 +1,22 @@
+[default_config]
+version = "0.10.1"
+assembler = "nasm"
+instruction_set = "x86"
+
+[default_config.opts]
+compiler = "gcc"
+compile_flags_txt = []
+diagnostics = true
+default_diagnostics = false
+
+[[project]]
+path = "src/test.asm"
+version = "0.10.1"
+assembler = "nasm"
+instruction_set = "x86-64"
+
+[project.opts]
+compiler = "gcc"
+compile_flags_txt = []
+diagnostics = true
+default_diagnostics = false

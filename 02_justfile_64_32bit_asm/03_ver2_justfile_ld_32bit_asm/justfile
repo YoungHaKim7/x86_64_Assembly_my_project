@@ -19,7 +19,7 @@ src_dir := "./src"
 target_dir := "./target"
 
 # Files
-source := src_dir+"/test.asm"
+source := src_dir+"/main.asm"
 target := target_dir+"/"+project_name
 
 # Common flags
@@ -32,12 +32,13 @@ r:
 	rm -rf {{target_dir}}
 	mkdir -p {{target_dir}}
 	{{nasm}} {{ldflags_common}} -o {{target}}.o {{source}}
-	{{gcc}} {{target_dir}}/*.o -o {{target_dir}}/{{project_name}}
+	{{ld}} {{target_dir}}/*.o -o {{target_dir}}/{{project_name}}
 	./{{target_dir}}/{{project_name}}
 
 # (C)gcc compile(LinuxOS)
 r32:
 	rm -rf {{target_dir}}
 	mkdir -p {{target_dir}}
-	{{gcc}} {{ldflags_32}} -o {{target_dir}}/{{project_name}} {{src_dir}}/*.o
+	{{nasm}} {{ldflags_32}} -o {{target}}.o {{source}}
+	{{ld}} -m elf_i386 {{target_dir}}/*.o -o {{target_dir}}/{{project_name}}
 	{{target}}

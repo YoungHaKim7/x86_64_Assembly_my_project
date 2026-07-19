@@ -39,5 +39,6 @@ r:
 r32:
 	rm -rf {{target_dir}}
 	mkdir -p {{target_dir}}
-	{{gcc}} {{ldflags_32}} -o {{target_dir}}/{{project_name}} {{src_dir}}/*.o
+	{{nasm}} {{ldflags_32}} -o {{target}}.o {{source}}
+	{{ld}} -m elf_i386 {{target_dir}}/*.o -o {{target_dir}}/{{project_name}}
 	{{target}}
