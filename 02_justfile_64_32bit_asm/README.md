@@ -1,3 +1,22 @@
+# asm-lsp
+- https://github.com/bergercookie/asm-lsp
+
+```bash
+$ asm-lsp gen-config --help
+Generate a .asm-lsp.toml config file
+
+Usage: asm-lsp gen-config [OPTIONS]
+
+Options:
+  -o, --output-dir <OUTPUT_DIR>      Directory to place .asm-lsp.toml into. (Default is the current directory)
+  -g, --global-cfg                   Place the config in the global config directory
+  -p, --project-path <PROJECT_PATH>  Path to the project this config is being generated for. (Default is the current directory)
+  -w, --overwrite                    Overwrite any existing .asm-lsp.toml in the target directory
+  -q, --quiet                        Don't display the generated config file after generation
+  -h, --help                         Print help
+```
+
+
 # AI
 - Perfect! The code is now fixed and working. Here's what I changed:
 
