@@ -1,0 +1,43 @@
+# Detect OS
+os := `uname`
+
+# project name
+project_name := `basename "$(pwd)"`
+full_project_name := `pwd`
+
+#  gcc basic
+gcc := `which gcc`
+
+# nasm compile
+nasm := `which nasm`
+
+# Linker
+ld := `which ld.bfd`
+
+# Source and target directories
+src_dir := "./src"
+target_dir := "./target"
+
+# Files
+source := src_dir+"/main.S"
+target := target_dir+"/"+project_name
+
+# Common flags
+# ldflags_common := "-felf64"
+# ldflags_64_obj := "-no-pie"
+# ldflags_32 := "-f elf32"
+
+# (C)gcc compile(LinuxOS)
+r:
+	rm -rf {{target_dir}}
+	mkdir -p {{target_dir}}
+	{{gcc}} {{source}}
+	mv ./a.out {{target_dir}}
+	{{target_dir}}/a.out
+
+# (C)gcc compile(LinuxOS)
+# r32:
+# 	rm -rf {{target_dir}}
+# 	mkdir -p {{target_dir}}
+# 	{{gcc}} -m32 {{target_dir}}/*.o -o {{target_dir}}/{{project_name}}
+# 	./{{target_dir}}/{{project_name}}
