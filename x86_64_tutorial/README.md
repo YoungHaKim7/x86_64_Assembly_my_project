@@ -1,5 +1,8 @@
 - https://cs.lmu.edu/~ray/notes/nasmtutorial/
 
+- https://www.cs.virginia.edu/~cr4bd/4630/S2025/slides/asm.pdf
+
+
 <hr>
 
 # (Intel vs Arm 비교해서 굿) The Beauty of Assembly | Hussein Nasser
