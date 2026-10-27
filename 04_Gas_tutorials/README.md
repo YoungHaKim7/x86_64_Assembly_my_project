@@ -19,5 +19,8 @@
 ### 어셈블리 종합 문서
 - https://www.minzkn.com/linuxkernel/pages/assembly.html
 
+## 디버깅 GDB
+- https://www.minzkn.com/linuxkernel/pages/gdb.html
+
 # GNU Assembler Examples
 - https://cs.lmu.edu/~ray/notes/gasexamples/
