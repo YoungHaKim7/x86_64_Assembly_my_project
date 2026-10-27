@@ -32,12 +32,50 @@
   - zed extension
     - https://github.com/DevBlocky/zed-asm
   - https://github.com/bergercookie/asm-lsp
+
+<hr />
+
+# lsp는 이거 씀(asm-lsp) 러스트로 만든거
+
+- https://github.com/bergercookie/asm-lsp
+
+```bash
+cargo install asm-lsp
+# or to get the latest version from github
+cargo 
 ```bash
 cargo install asm-lsp
 # or to get the latest version from github
 cargo install --git https://github.com/bergercookie/asm-lsp asm-lsp
 ```
 
+#### Config Builder
+
+Creating a `.asm-lsp.toml` file manually is fine, but can be error-prone as projects
+grow in complexity. Running `asm-lsp gen-config` will walk you through the creation
+of a config interactively, with informative prompts and extra validation checks
+along the way.
+
+```bash
+$ asm-lsp gen-config --help
+Generate a .asm-lsp.toml config file
+
+Usage: asm-lsp gen-config [OPTIONS]
+
+Options:
+  -o, --output-dir <OUTPUT_DIR>      Directory to place .asm-lsp.toml into. (Default is the current directory)
+  -g, --global-cfg                   Place the config in the global config directory
+  -p, --project-path <PROJECT_PATH>  Path to the project this config is being generated for. (Default is the current directory)
+  -w, --overwrite                    Overwrite any existing .asm-lsp.toml in the target directory
+  -q, --quiet                        Don't display the generated config file after generation
+  -h, --help                         Print help
+```
+
+### 실행
+
+```bash
+asm-lsp gen-config
+```
 
 <hr />
 
