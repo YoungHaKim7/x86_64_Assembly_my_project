@@ -13,5 +13,11 @@
 
 - https://www.minzkn.com/linuxkernel/pages/gnu-as.html
 
+### GNU Binutils 도구 (Analysis Tools)
+- https://www.minzkn.com/linuxkernel/pages/elf.html#elf-tools
+
+### 어셈블리 종합 문서
+- https://www.minzkn.com/linuxkernel/pages/assembly.html
+
 # GNU Assembler Examples
 - https://cs.lmu.edu/~ray/notes/gasexamples/
