@@ -1,0 +1,6 @@
+[package]
+name = "a06_intel_asm_call_max"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
