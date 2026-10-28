@@ -1,0 +1,10 @@
+project_name := `basename "$(pwd)"`
+target_folder := "target"
+
+r:
+    rm -rf {{target_folder}}
+    mkdir -p {{target_folder}}
+    as -o {{target_folder}}/main.o src/main.asm
+    # gcc links libc (for printf); -nostartfiles keeps our _start, -no-pie matches the absolute addressing used in the asm
+    gcc -no-pie -nostartfiles {{target_folder}}/main.o -o target/{{project_name}}
+    {{target_folder}}/{{project_name}}
