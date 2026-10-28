@@ -1,6 +1,6 @@
 [default_config]
 version = "0.10.1"
-assembler = "gas"
+assembler = "nasm"
 instruction_set = "x86-64"
 
 [default_config.opts]
