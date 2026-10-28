@@ -1,9 +1,14 @@
-        .global main
+        .global _start
 
-        .text
-main:                                   # This is called by C library's startup code
-        mov     $message, %rdi          # First integer (or pointer) parameter in %rdi
-        call    puts                    # puts(message)
-        ret                             # Return to C library code
+        .section .text
+_start:
+        leaq    message(%rip), %rdi     # First argument: message
+        call    puts@PLT                # puts(message)
+        xorl    %eax, %eax              # Return 0 from main
+        ret
+
+        .section .rodata
 message:
-        .asciz "Hola, mundo"            # asciz puts a 0 byte at the end
+        .asciz  "Hola, mundo"
+
+        .section .note.GNU-stack,"",@progbits
