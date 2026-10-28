@@ -10,7 +10,7 @@ diagnostics = true
 default_diagnostics = false
 
 [[project]]
-path = "src/main.S"
+path = "src/main.asm"
 version = "0.10.1"
 assembler = "gas"
 instruction_set = "x86-64"

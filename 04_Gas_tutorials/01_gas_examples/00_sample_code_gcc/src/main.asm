@@ -2,11 +2,13 @@
 # Writes "Hello, World" to the console using only system calls. Runs on 64-bit Linux only.
 # To assemble and run:
 #
-#     gcc -c hello.s && ld hello.o && ./a.out
+# as -o main.o main.asm
 #
-# or
+# ; gcc links libc (for printf); -nostartfiles keeps our _start, -no-pie matches the absolute addressing used in the asm
 #
-#     gcc -nostdlib hello.s && ./a.out
+# gcc -no-pie -nostartfiles main.o 
+# ./.a.out 
+#
 # ----------------------------------------------------------------------------------------
 
         .global _start
