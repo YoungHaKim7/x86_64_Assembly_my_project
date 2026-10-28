@@ -92,3 +92,15 @@
 1100087778366101931
 1779979416004714189
 ```
+
+- Fixed. The linker warning is gone — the build is now clean.
+
+**What was wrong:** It wasn't a build error, just a linker warning: NASM object files don't emit a `.note.GNU-stack` section by default, so `ld` assumes the code wants an **executable stack** (a security hazard, and deprecated behavior that will become an error in future linker versions).
+
+**The fix** (`src/main.asm:53-55`): added
+
+```nasm
+section .note.GNU-stack noalloc noexec nowrite progbits
+```
+
+This tells the linker the stack doesn't need execute permission, silencing the warning. The alternative would be adding `-z noexecstack` to the `gcc` link line in the justfile, but putting it in the source is the conventional fix since it travels with the file.
