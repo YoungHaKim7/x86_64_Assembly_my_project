@@ -142,17 +142,19 @@ Your original command was:
 gcc -no-pie -nostartfiles target/main.o -o target/a01_hola
 ```
 
-The normal execution flow is:
+- The normal execution flow is:
 
-C runtime startup (`_start`)
+| C runtime startup (`_start`)|
+|-|
+| ⬇ |
+|`main()`|
+| ⬇ |
+|`puts("Hola, mundo")`|
+| ⬇ |
+|`return 0`|
+| ⬇ |
+|C runtime exits the process|
 
-`main()`
-
-`puts("Hola, mundo")`
-
-`return 0`
-
-C runtime exits the process
 
 With `-nostartfiles`, GCC omits the runtime startup code. The linker therefore reports that `_start` is missing, and the executable begins at a fallback address rather than through the normal C runtime. When `main` executes `ret`, it has no valid return address, causing the segmentation fault.
 
