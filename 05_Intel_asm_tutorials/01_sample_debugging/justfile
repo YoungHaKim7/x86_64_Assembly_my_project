@@ -1,0 +1,25 @@
+project_name := `basename "$(pwd)"`
+target_folder := "target"
+source_main := "src/main.asm"
+
+r:
+    rm -rf {{target_folder}}
+    mkdir -p {{target_folder}}
+    nasm -felf64 {{source_main}}
+    mv src/main.o {{target_folder}}/main.o
+    # as -o {{target_folder}}/main.o {{source_main}}
+    # gcc links libc (for printf); -nostartfiles keeps our _start, -no-pie matches the absolute addressing used in the asm
+    gcc {{target_folder}}/main.o -o target/{{project_name}}
+    {{target_folder}}/{{project_name}}
+
+debug:
+    rm -rf {{target_folder}}
+    mkdir -p {{target_folder}}
+    nasm -felf64 -g -F dwarf {{source_main}}
+    mv src/main.o {{target_folder}}/main.o
+    # as -o {{target_folder}}/main.o {{source_main}}
+    # gcc links libc (for printf); -nostartfiles keeps our _start, -no-pie matches the absolute addressing used in the asm
+    gcc -g -no-pie {{target_folder}}/main.o -o target/{{project_name}}
+    {{target_folder}}/{{project_name}}
+    gdb ./{{target_folder}}/{{project_name}}
+
