@@ -49,3 +49,7 @@ print_loop:
     pop r12                   ; Restore r12
     pop rbx                   ; Restore rbx
     ret
+ 
+; Mark stack as non-executable; silences the linker warning about
+; "missing .note.GNU-stack section implies executable stack"
+section .note.GNU-stack noalloc noexec nowrite progbits
