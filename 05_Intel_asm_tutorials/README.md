@@ -1,4 +1,4 @@
-# nasm
+# nasm(Intel asm compiler)
 
 # x86 Assembly/Interfacing with Linux
 

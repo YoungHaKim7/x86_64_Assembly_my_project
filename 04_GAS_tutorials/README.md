@@ -1,4 +1,7 @@
-# nasm
+# GAS 는 GNU공식 assembler이다.
+
+- GAS (GNU Assembler) is primarily chosen because it is the default backend assembler for the GNU Compiler Collection (GCC) and LLVM/Clang, making it the foundational tool for building Unix-like operating systems, including Linux.
+  - https://en.wikipedia.org/wiki/GNU_Assembler
 
 # x86 Assembly/Interfacing with Linux
 
