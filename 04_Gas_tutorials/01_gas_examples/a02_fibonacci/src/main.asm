@@ -1,39 +1,51 @@
         .global _start
 
-        .text
+        .section .text
 _start:
-        push    %rbx                    # we have to save this since we use it
+        # Align the stack at process entry.
+        andq    $-16, %rsp
 
-        mov     $90, %ecx               # ecx will countdown to 0
-        xor     %rax, %rax              # rax will hold the current number
-        xor     %rbx, %rbx              # rbx will hold the next number
-        inc     %rbx                    # rbx is originally 1
+        # Initialize Fibonacci values.
+        xorq    %r12, %r12              # Current number = 0
+        movq    $1, %rbx                # Next number = 1
+        movl    $90, %r13d              # Print 90 numbers
+
 print:
-        # We need to call printf, but we are using eax, ebx, and ecx.  printf
-        # may destroy eax and ecx so we will save these before the call and
-        # restore them afterwards.
+        # Preserve Fibonacci state across printf.
+        pushq   %r12
+        pushq   %rbx
 
-        push    %rax                    # caller-save register
-        push    %rcx                    # caller-save register
+        leaq    format(%rip), %rdi      # Argument 1: format
+        movq    %r12, %rsi              # Argument 2: current number
+        xorl    %eax, %eax              # No vector arguments
 
-        mov     $format, %rdi           # set 1st parameter (format)
-        mov     %rax, %rsi              # set 2nd parameter (current_number)
-        xor     %rax, %rax              # because printf is varargs
+        # Stack is 16-byte aligned before this call.
+        call    printf@PLT
 
-        # Stack is already aligned because we pushed three 8 byte registers
-        call    printf                  # printf(format, current_number)
+        # Restore Fibonacci state.
+        popq    %rbx
+        popq    %r12
 
-        pop     %rcx                    # restore caller-save register
-        pop     %rax                    # restore caller-save register
+        # Calculate the next Fibonacci pair.
+        movq    %r12, %rdx
+        movq    %rbx, %r12
+        addq    %rdx, %rbx
 
-        mov     %rax, %rdx              # save the current number
-        mov     %rbx, %rax              # next number is now current
-        add     %rdx, %rbx              # get the new next number
-        dec     %ecx                    # count down
-        jnz     print                   # if not done counting, do some more
+        decl    %r13d
+        jnz     print
 
-        pop     %rbx                    # restore rbx before returning
-        ret
+        # Flush libc output before exiting.
+        xorl    %edi, %edi              # fflush(NULL)
+        call    fflush@PLT
+
+        # Linux x86-64 exit syscall.
+        movl    $60, %eax               # SYS_exit
+        xorl    %edi, %edi              # Status = 0
+        syscall
+
+        .section .rodata
 format:
         .asciz  "%20ld\n"
+
+        .section .note.GNU-stack,"",@progbits
 
