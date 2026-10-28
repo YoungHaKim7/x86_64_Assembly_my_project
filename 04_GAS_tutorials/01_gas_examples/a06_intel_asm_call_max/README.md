@@ -67,3 +67,16 @@ For example, if `x = 10`, `y = 25`, and `z = 15`:
 6. `ret` — return `25` in `rax`.
 
 Important: `cmovl` performs a signed comparison. This implementation is correct for signed 64-bit integers. If your inputs are unsigned integers, use `cmovb` instead.
+
+# Ai fix
+
+- Fixed — clippy passes with `-D warnings`, and `cargo run` still prints the correct `1 2 3 4 5 6`.
+
+What was going on:
+
+- **Root cause**: rustc's `global_asm!` assembles **Intel syntax by default** on x86-64, so the `.intel_syntax noprefix` at the top of `maxofthree.s` was redundant (it's only needed with plain GNU `as`, like the sibling crates' `options(att_syntax)` is needed for AT&T). The clean fix is dropping the directive rather than `#[allow]`ing the lint.
+- **Why the earlier attempt didn't work**: the clippy error had been pasted into the `.s` file as comments, and line 1 of that paste contained the literal text `.intel_syntax`. The lint greps for that substring anywhere in the spliced-in file — comments included — so it kept firing. Same trap bit my first fix attempt; the comment now says "syntax-switch directive" instead of naming the directive.
+
+Changes:
+- `src/maxofthree.s` — removed the pasted error text and the commented-out directive; left a short comment noting Intel is the default under `global_asm!`.
+- `src/main.rs:3-6` — corrected the stale comment (it claimed the file was AT&T and referenced `options(att_syntax)`, copy-pasted from an AT&T sibling crate).
