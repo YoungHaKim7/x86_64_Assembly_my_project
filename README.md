@@ -25,6 +25,10 @@
   - [Top 10 Craziest Assembly Language Instructions | Creel](#top-10-craziest-assembly-language-instructions--creel)
 
 - [외부링크) x86 and amd64 instruction reference](https://www.felixcloutier.com/x86/)
+  - 64bit
+    - https://www.cs.virginia.edu/~cr4bd/4630/S2025/slides/asm.pdf
+  - 32bit
+    - https://gist.github.com/DmitrySoshnikov/c67cbde1cceb0d6a194830b41baa5c8b
 
 <hr />
 
