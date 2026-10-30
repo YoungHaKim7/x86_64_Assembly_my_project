@@ -23,3 +23,14 @@ debug:
     {{target_folder}}/{{project_name}}
     gdb ./{{target_folder}}/{{project_name}}
 
+obj:
+    rm -rf {{target_folder}}
+    mkdir -p {{target_folder}}
+    # yasm debug format is selected with -g (NASM uses -g -F dwarf); -o writes the object straight to target/
+    yasm -felf64 -g dwarf2 -o {{target_folder}}/main.o {{source_main}}
+    # gcc links libc + C startup (which calls main; the asm has no _start); -no-pie matches the absolute addressing used in the asm
+    gcc -g -no-pie {{target_folder}}/main.o -o target/{{project_name}}
+    {{target_folder}}/{{project_name}}
+    objdump -d {{target_folder}}/{{project_name}} >> target/objdump.txt
+    readelf -S {{target_folder}}/{{project_name}} >> target/readelf.txt
+
