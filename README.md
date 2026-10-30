@@ -6,6 +6,9 @@
 
 <hr>
 
+- playground(x86_64)
+  - https://app.x64.halb.it/
+
 - x86_64 Assembly Tutorial
   - [x86_64_assembly-language-programming-with-ubuntu](#x86_64_assembly-language-programming-with-ubuntu)
 
