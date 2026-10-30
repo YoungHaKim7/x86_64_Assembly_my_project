@@ -8,8 +8,8 @@ r:
     nasm -felf64 -F dwarf {{source_main}}
     mv src/main.o {{target_folder}}/main.o
     # as -o {{target_folder}}/main.o {{source_main}}
-    # gcc links libc (for printf); -nostartfiles keeps our _start, -no-pie matches the absolute addressing used in the asm
-    gcc {{target_folder}}/main.o -o target/{{project_name}}
+    # gcc links libc + C startup (which calls main; the asm has no _start); -no-pie matches the absolute addressing used in the asm
+    gcc -no-pie {{target_folder}}/main.o -o target/{{project_name}}
     {{target_folder}}/{{project_name}}
 
 debug:
@@ -18,7 +18,7 @@ debug:
     nasm -felf64 -g -F dwarf {{source_main}}
     mv src/main.o {{target_folder}}/main.o
     # as -o {{target_folder}}/main.o {{source_main}}
-    # gcc links libc (for printf); -nostartfiles keeps our _start, -no-pie matches the absolute addressing used in the asm
+    # gcc links libc + C startup (which calls main; the asm has no _start); -no-pie matches the absolute addressing used in the asm
     gcc -g -no-pie {{target_folder}}/main.o -o target/{{project_name}}
     {{target_folder}}/{{project_name}}
     gdb ./{{target_folder}}/{{project_name}}

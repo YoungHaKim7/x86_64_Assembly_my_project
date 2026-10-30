@@ -1,3 +1,21 @@
+# Ubuntu error fix
+
+- The link fails because the gcc line is missing the flags its own comment describes — `-no-pie` (and `-nostartfiles` for your `_start`). Let me look at the justfile and source.
+
+The problem: recipe `r`'s gcc line on justfile:12 has no `-no-pie` (the `debug` recipe does). Ubuntu's gcc defaults to PIE, and the asm uses 32-bit absolute addressing (`mov rdi, format`) plus a direct `call printf`, which can't be relocated in a PIE.
+
+One more thing the comment gets wrong: this source defines `main` and returns with `ret` — it relies on the C startup code to be called and to exit cleanly, so `-nostartfiles` must **not** be used (it would remove `_start` entirely). I'll add `-no-pie` and fix the stale comment.
+
+Now verifying the build runs:
+
+Fixed and verified — `just r` now builds and prints the 90 Fibonacci numbers.
+
+The cause: the gcc line in recipe `r` was missing `-no-pie`, while the `debug` recipe already had it. Ubuntu's gcc links PIE executables by default, but the asm uses 32-bit absolute addressing (`mov rdi, format`) and a direct `call printf`, which produce relocations (`R_X86_64_PC32`) that can't be resolved in a PIE.
+
+Changes in the justfile:
+- Added `-no-pie` to the link command in `r`.
+- Corrected the comment on both recipes: it claimed `-nostartfiles` keeps "our `_start`", but the asm actually defines `main` (no `_start`) and returns with `ret`, so it depends on the normal C startup code to get called and to exit cleanly — `-nostartfiles` would break the link.
+
 # debugging
 
 ```gdb
