@@ -689,7 +689,13 @@ http://www.egr.unlv.edu/~ed/assembly64.pdf
     </tr>
 </table>
 
-http://www.egr.unlv.edu/~ed/assembly64.pdf
+- http://www.egr.unlv.edu/~ed/assembly64.pdf
+- https://en.wikibooks.org/wiki/X86_Assembly/Interfacing_with_Linux
+- [외부링크) x86 and amd64 instruction reference](https://www.felixcloutier.com/x86/)
+  - 64bit
+    - https://www.cs.virginia.edu/~cr4bd/4630/S2025/slides/asm.pdf
+  - 32bit
+    - https://gist.github.com/DmitrySoshnikov/c67cbde1cceb0d6a194830b41baa5c8b
 
 <br>
 
