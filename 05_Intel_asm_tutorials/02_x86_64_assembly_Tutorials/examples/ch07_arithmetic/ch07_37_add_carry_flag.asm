@@ -5,8 +5,8 @@
 ; Book ref:     "x86-64 Assembly Language Programming with Ubuntu",
 ;               Ed Jorgensen, section 7.5 (Integer Arithmetic Instructions)
 ;
-; Build:  yasm -f elf64 -g dwarf2 -l ch07_37.lst ch07_37_add_carry_flag.asm && ld -g -o ch07_37 ch07_37_add_carry_flag.o
-; Run:    ./ch07_37 ; echo $?        -> exit code: 1
+; Build:  yasm -f elf64 -g dwarf2 -l ch07_37_add_carry_flag.lst ch07_37_add_carry_flag.asm && ld -g -o ch07_37_add_carry_flag ch07_37_add_carry_flag.o
+; Run:    ./ch07_37_add_carry_flag ; echo $?        -> exit code: 1
 ; -----------------------------------------------------------------------------
 
 SYS_exit         equ 60

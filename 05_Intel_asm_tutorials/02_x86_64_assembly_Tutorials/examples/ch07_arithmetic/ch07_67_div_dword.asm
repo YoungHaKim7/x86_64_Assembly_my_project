@@ -24,7 +24,7 @@ _start:
     div     ebx                         ; eax = 142857, edx = 1000000 % 7
 
 ; 7 * 142857 = 999999, so the remainder is 1: the classic "million mod 7".
-    movzx   edi, edx                    ; exit status = remainder (1)
+    mov     edi, edx                    ; exit status = remainder (1)
 
 last:
     mov     rax, SYS_exit               ; call code for exit

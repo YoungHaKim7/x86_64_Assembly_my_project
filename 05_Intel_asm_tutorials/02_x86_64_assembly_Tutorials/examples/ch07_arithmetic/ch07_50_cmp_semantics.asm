@@ -5,8 +5,8 @@
 ; Book ref:     "x86-64 Assembly Language Programming with Ubuntu",
 ;               Ed Jorgensen, section 7.5 (Integer Arithmetic Instructions)
 ;
-; Build:  yasm -f elf64 -g dwarf2 -l ch07_50.lst ch07_50_cmp_semantics.asm && ld -g -o ch07_50 ch07_50_cmp_semantics.o
-; Run:    ./ch07_50 ; echo $?        -> exit code: 1
+; Build:  yasm -f elf64 -g dwarf2 -l ch07_50_cmp_semantics.lst ch07_50_cmp_semantics.asm && ld -g -o ch07_50_cmp_semantics ch07_50_cmp_semantics.o
+; Run:    ./ch07_50_cmp_semantics ; echo $?        -> exit code: 1
 ; -----------------------------------------------------------------------------
 
 SYS_exit         equ 60

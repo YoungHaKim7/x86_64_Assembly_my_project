@@ -31,7 +31,7 @@ _start:
 ;   edx = 0x00000001  (high double-word = 1)
 ;   eax = 0x65A0BC00  (low double-word)
 ; The non-zero edx proves the 32-bit product spilled into edx:eax.
-    movzx   edi, edx                    ; exit status = high double-word (1)
+    mov     edi, edx                    ; exit status = high double-word (1)
 
 last:
     mov     rax, SYS_exit               ; call code for exit

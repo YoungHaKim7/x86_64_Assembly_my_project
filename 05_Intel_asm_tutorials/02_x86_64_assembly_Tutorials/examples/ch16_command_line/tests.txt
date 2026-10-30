@@ -1,0 +1,9 @@
+# ch16 command line arguments
+ch16_01_argc_exit          exit    4       -   x  y  z
+ch16_02_print_argv0        outc    ch16_02
+ch16_03_print_all_args     out     aa\nbb\n    -   aa  bb
+ch16_04_count_arg_chars    exit    5       -   abc  de
+ch16_05_sum_args           out     42\n        -   10  20  12
+ch16_06_max_arg            exit    77      -   5  77  19
+ch16_07_find_path_env      exit    1
+ch16_08_reverse_args       out     z\ny\nx\n    -   x  y  z

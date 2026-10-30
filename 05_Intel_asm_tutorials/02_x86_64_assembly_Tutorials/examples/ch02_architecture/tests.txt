@@ -1,0 +1,10 @@
+# ch02_architecture -- architecture: data sizes, GPRs, memory, rFlags (book ch 2)
+# <name>                    <kind>   <expected>   <stdin>   <args...>
+ch02_01_data_sizes          exit     8            -
+ch02_02_gpr_sizes           exit     255          -
+ch02_03_eax_zero_extend     exit     5            -
+ch02_04_ax_preserves_upper  exit     7            -
+ch02_05_little_endian       exit     136          -
+ch02_06_bss_is_zero         exit     21           -
+ch02_07_address_stride      exit     8            -
+ch02_08_rflags_carry_bit    exit     1            -

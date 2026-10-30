@@ -1,0 +1,5 @@
+# ch17 buffered I/O
+ch17_01_buffered_write     out     hello buffered\n
+ch17_02_buffer_flush       out     a\nb\nc\n
+ch17_03_line_buffered      out     one\ntwo\n
+ch17_04_buffered_read_cat  out     multi\nline\ntext\n   multi\nline\ntext\n

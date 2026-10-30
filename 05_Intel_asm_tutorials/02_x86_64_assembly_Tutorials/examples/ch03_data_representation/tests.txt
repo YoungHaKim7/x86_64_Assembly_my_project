@@ -1,0 +1,16 @@
+# ch03_data_representation -- two's complement, flags, IEEE-754, ASCII (book ch 3)
+# <name>                          <kind>   <expected>   <stdin>   <args...>
+ch03_01_twos_complement_byte     exit     251          -
+ch03_02_twos_complement_word     exit     156          -
+ch03_03_twos_complement_dword    exit     1            -
+ch03_04_twos_complement_qword    exit     1            -
+ch03_05_sign_extension           exit     251          -
+ch03_06_unsigned_carry           exit     1            -
+ch03_07_signed_overflow          exit     1            -
+ch03_08_no_flags                 exit     0            -
+ch03_09_ieee754_float_bits       exit     127          -
+ch03_10_ieee754_double_bits      exit     255          -
+ch03_11_ascii_codes              exit     65           -
+ch03_12_ascii_case               exit     97           -
+ch03_13_digit_chars              exit     57           -
+ch03_14_string_bytes             exit     72           -

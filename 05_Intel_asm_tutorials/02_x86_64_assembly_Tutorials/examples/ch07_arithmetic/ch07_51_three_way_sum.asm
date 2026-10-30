@@ -5,8 +5,8 @@
 ; Book ref:     "x86-64 Assembly Language Programming with Ubuntu",
 ;               Ed Jorgensen, section 7.5 (Integer Arithmetic Instructions)
 ;
-; Build:  yasm -f elf64 -g dwarf2 -l ch07_51.lst ch07_51_three_way_sum.asm && ld -g -o ch07_51 ch07_51_three_way_sum.o
-; Run:    ./ch07_51 ; echo $?        -> exit code: 255
+; Build:  yasm -f elf64 -g dwarf2 -l ch07_51_three_way_sum.lst ch07_51_three_way_sum.asm && ld -g -o ch07_51_three_way_sum ch07_51_three_way_sum.o
+; Run:    ./ch07_51_three_way_sum ; echo $?        -> exit code: 255
 ; -----------------------------------------------------------------------------
 
 SYS_exit         equ 60

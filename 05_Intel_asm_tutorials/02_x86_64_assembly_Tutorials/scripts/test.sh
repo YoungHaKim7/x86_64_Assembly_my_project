@@ -2,11 +2,13 @@
 # -----------------------------------------------------------------------------
 # test.sh -- run every example and verify against the chapter tests.txt
 #
-# Manifest format (see docs/SPEC.md):
+# Manifest line format (see docs/SPEC.md):
 #   <name>  <kind>  <expected>  [stdin|-]  [args...]
+# Columns are separated by 2+ spaces or a tab, so <expected> may itself
+# contain single spaces. \n inside expected/stdin means newline.
 # kinds: exit | out | outc | signal
 #   exit   -> $? must equal expected
-#   out    -> stdout must equal expected exactly (\n = newline)
+#   out    -> stdout must equal expected exactly
 #   outc   -> stdout must contain expected
 #   signal -> process must die from signal expected (e.g. 8 = SIGFPE)
 #
@@ -36,7 +38,7 @@ run_case() {
     [ -x "$BIN/$name" ] || { echo "FAIL  $name      (missing binary)"; FAIL=$((FAIL+1)); FAILED_LIST+=("$name"); return; }
 
     local out rc
-    if [ "$stdin_data" = "-" ]; then
+    if [ "$stdin_data" = "-" ] || [ -z "$stdin_data" ]; then
         out="$("$BIN/$name" "${args[@]}" 2>/dev/null)"
         rc=$?
     else
@@ -69,16 +71,38 @@ run_case() {
     fi
 }
 
-for manifest in "$ROOT"/examples/*/tests.txt; do
+# Parse one manifest line into tab-separated: name, kind, expect, stdin, args...
+parse_line() {
+    awk '
+    {
+        line = $0
+        # name and kind: first two whitespace-delimited tokens
+        match(line, /^[[:space:]]*[^[:space:]]+/); name = substr(line, RSTART, RLENGTH)
+        line = substr(line, RSTART + RLENGTH)
+        match(line, /^[[:space:]]*[^[:space:]]+/); kind = substr(line, RSTART, RLENGTH)
+        line = substr(line, RSTART + RLENGTH)
+        gsub(/^[[:space:]]+/, "", name); gsub(/^[[:space:]]+/, "", kind)
+        sub(/^[[:space:]]+/, "", line)            # leading gap before expect
+        sub(/[[:space:]]+$/, "", line)            # trailing gap
+        # expect runs until 2+ spaces or a tab
+        n = split(line, f, /[[:space:]]{2,}|\t/)
+        expect = f[1]; stdin_data = (n >= 2 ? f[2] : "")
+        args = ""
+        for (i = 3; i <= n; i++) args = args (i > 3 ? " " : "") f[i]
+        printf "%s\t%s\t%s\t%s\t%s\n", name, kind, expect, stdin_data, args
+    }'
+}
+
+for manifest in "$ROOT"/examples/*/tests.txt "$ROOT"/examples/*/*/tests.txt; do
     [ -f "$manifest" ] || continue
     dir="$(basename "$(dirname "$manifest")")"
     if [ -n "$FILTER" ] && [ "$dir" != "$FILTER" ]; then continue; fi
 
-    while read -r name kind expect stdin_data rest; do
+    while IFS=$'\t' read -r name kind expect stdin_data args; do
         case "$name" in ''|\#*) continue ;; esac
         # shellcheck disable=SC2086
-        run_case "$name" "$kind" "$expect" "$stdin_data" $rest
-    done < "$manifest"
+        run_case "$name" "$kind" "$expect" "$stdin_data" $args
+    done < <(grep -v '^[[:space:]]*#' "$manifest" | grep -v '^[[:space:]]*$' | parse_line)
 done
 
 echo "--------------------------------------------------"

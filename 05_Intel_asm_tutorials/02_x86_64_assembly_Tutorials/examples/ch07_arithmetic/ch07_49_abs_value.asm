@@ -5,8 +5,8 @@
 ; Book ref:     "x86-64 Assembly Language Programming with Ubuntu",
 ;               Ed Jorgensen, section 7.5 (Integer Arithmetic Instructions)
 ;
-; Build:  yasm -f elf64 -g dwarf2 -l ch07_49.lst ch07_49_abs_value.asm && ld -g -o ch07_49 ch07_49_abs_value.o
-; Run:    ./ch07_49 ; echo $?        -> exit code: 77
+; Build:  yasm -f elf64 -g dwarf2 -l ch07_49_abs_value.lst ch07_49_abs_value.asm && ld -g -o ch07_49_abs_value ch07_49_abs_value.o
+; Run:    ./ch07_49_abs_value ; echo $?        -> exit code: 77
 ; -----------------------------------------------------------------------------
 
 SYS_exit         equ 60

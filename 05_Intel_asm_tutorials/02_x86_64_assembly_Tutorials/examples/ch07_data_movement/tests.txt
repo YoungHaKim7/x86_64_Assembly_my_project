@@ -1,0 +1,24 @@
+# ch07 data movement (book sections 7.2 Data Movement / 7.3 Addresses and Values)
+# name                         kind   expected
+ch07_01_mov_imm_to_reg          exit   77
+ch07_02_mov_reg_to_reg          exit   77
+ch07_03_mov_mem_to_reg          exit   123
+ch07_04_mov_reg_to_mem          exit   88
+ch07_05_mov_operand_sizes       exit   171
+ch07_06_mov_imm_to_mem          exit   91
+ch07_07_xchg_registers          exit   22
+ch07_08_xchg_reg_mem            exit   55
+ch07_09_movzx_byte              exit   244
+ch07_10_movzx_word              exit   52
+ch07_11_movsx_byte              exit   128
+ch07_12_movsx_word              exit   133
+ch07_13_movsxd_dword            exit   255
+ch07_14_movzx_vs_movsx          exit   224
+ch07_15_lea_address             exit   1
+ch07_16_lea_arithmetic          exit   21
+ch07_17_lea_vs_mov_value        exit   20
+ch07_18_label_address           exit   65
+ch07_19_address_stride          exit   16
+ch07_20_eax_zero_extends        exit   11
+ch07_21_al_preserves_upper      exit   95
+ch07_22_mem_via_registers       exit   15

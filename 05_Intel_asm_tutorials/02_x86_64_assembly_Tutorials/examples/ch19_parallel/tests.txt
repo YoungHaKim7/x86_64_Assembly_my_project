@@ -1,0 +1,5 @@
+# ch19 parallel processing / fork
+ch19_01_fork_child_exit         exit    42
+ch19_02_fork_two_children       exit    30
+ch19_03_fork_print_roles        outc    child   -
+ch19_04_waitpid_wexitstatus     exit    8

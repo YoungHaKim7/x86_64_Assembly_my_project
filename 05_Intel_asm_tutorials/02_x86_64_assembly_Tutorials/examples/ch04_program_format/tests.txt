@@ -1,0 +1,14 @@
+# ch04_program_format -- skeleton, data/bss sections, constants, bases (book ch 4)
+# <name>                       <kind>   <expected>   <stdin>   <args...>
+ch04_01_program_skeleton       exit     7            -
+ch04_02_byte_variables         exit     52           -
+ch04_03_word_variables         exit     255          -
+ch04_04_dword_variables        exit     4            -
+ch04_05_qword_variables        exit     100          -
+ch04_06_mixed_sizes            exit     255          -
+ch04_07_bss_variables          exit     51           -
+ch04_08_equ_constants          exit     9            -
+ch04_09_string_variables       exit     5            -
+ch04_10_array_variables        exit     200          -
+ch04_11_float_variables        exit     64           -
+ch04_12_number_bases           exit     34           -

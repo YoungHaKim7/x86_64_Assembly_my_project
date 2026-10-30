@@ -5,8 +5,8 @@
 ; Book ref:     "x86-64 Assembly Language Programming with Ubuntu",
 ;               Ed Jorgensen, section 7.5 (Integer Arithmetic Instructions)
 ;
-; Build:  yasm -f elf64 -g dwarf2 -l ch07_33.lst ch07_33_add_dword_carry.asm && ld -g -o ch07_33 ch07_33_add_dword_carry.o
-; Run:    ./ch07_33 ; echo $?        -> exit code: 1
+; Build:  yasm -f elf64 -g dwarf2 -l ch07_33_add_dword_carry.lst ch07_33_add_dword_carry.asm && ld -g -o ch07_33_add_dword_carry ch07_33_add_dword_carry.o
+; Run:    ./ch07_33_add_dword_carry ; echo $?        -> exit code: 1
 ; -----------------------------------------------------------------------------
 
 SYS_exit         equ 60

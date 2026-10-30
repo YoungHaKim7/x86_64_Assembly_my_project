@@ -1,0 +1,1 @@
+proj_05_c_calls_asm   out   2^10 = 1024\n

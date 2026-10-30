@@ -1,0 +1,15 @@
+# ch09 process stack
+ch09_01_push_pop             exit     42
+ch09_02_lifo_order           exit     1
+ch09_03_save_restore         exit     17
+ch09_04_pushfq_popfq         exit     1
+ch09_05_push_memory          exit     63
+ch09_06_sub_rsp_workspace    exit     66
+ch09_07_stack_temporaries    exit     60
+ch09_08_nested_pushes        exit     1
+ch09_09_swap_via_stack       exit     4
+ch09_10_reverse_array        exit     5
+ch09_11_stack_sum            exit     15
+ch09_12_rbp_frame            exit     25
+ch09_13_rsp_balance          exit     1
+ch09_14_rflags_carry_bit     exit     1

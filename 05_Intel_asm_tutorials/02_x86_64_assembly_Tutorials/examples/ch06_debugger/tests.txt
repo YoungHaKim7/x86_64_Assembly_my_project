@@ -1,0 +1,7 @@
+# ch06_debugger -- debugger-friendly programs plus .gdb command files (book ch 6)
+# The ch06_01.gdb / ch06_02.gdb scripts expect the locally linked short names
+# ch06_01 / ch06_02 produced by the Build line in each .asm header; the manifest
+# below tests the same sources via their full stems.
+# <name>                       <kind>   <expected>   <stdin>   <args...>
+ch06_01_debugger_demo          exit     15           -
+ch06_02_step_vs_next           exit     25           -

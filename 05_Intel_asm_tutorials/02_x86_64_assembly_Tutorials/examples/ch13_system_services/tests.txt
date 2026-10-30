@@ -1,0 +1,29 @@
+# ch13 system services
+ch13_01_hello_world            out     Hello World\n
+ch13_02_multiline_message      out     one\ntwo\nthree\n
+ch13_03_string_length_equ      out     Assembly\n
+ch13_04_syscall_anatomy        out     syscall\n
+ch13_05_exit_code_demo         out     A\n
+ch13_05_exit_code_demo         exit    65      -
+ch13_06_read_stdin             out     echo\n  echo\n
+ch13_07_read_line_length       exit    6       hello\n
+ch13_08_atoi_single_digit      exit    7       7\n
+ch13_09_atoi_multi_digit       exit    250     250\n
+ch13_10_atoi_signed            exit    249     -7\n
+ch13_11_itoa_positive          out     12345\n
+ch13_12_itoa_negative          out     -42\n
+ch13_13_print_int_function     out     375\n
+ch13_14_print_two_ints         out     30\n6\n
+ch13_15_read_print_back        out     123\n   123\n
+ch13_16_read_two_sum           out     100\n   60\n40\n
+ch13_17_read_square            out     144\n   12\n
+ch13_18_squares_table          out     1\n4\n9\n16\n25\n   5\n
+ch13_19_file_create_write      exit    0
+ch13_20_file_roundtrip         out     round trip\n
+ch13_21_file_append            out     ABCD\n
+ch13_22_file_write_numbers     out     1\n2\n3\n
+ch13_23_file_unlink            exit    1
+ch13_24_stderr_write           out     to stdout\n
+ch13_25_getpid                 outc    pid:
+ch13_25_getpid                 exit    0       -
+ch13_26_simple_calculator      out     46\n    12+34\n

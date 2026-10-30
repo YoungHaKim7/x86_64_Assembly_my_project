@@ -1,0 +1,1 @@
+proj_06_asm_calls_c   out   sum = 60\n

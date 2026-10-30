@@ -1,0 +1,4 @@
+# ch20 interrupts / signals
+ch20_01_sigfpe_child            exit    8
+ch20_02_sigalrm_child           exit    14
+ch20_03_sigtrap_int3            exit    5

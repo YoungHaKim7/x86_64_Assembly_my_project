@@ -1,0 +1,19 @@
+# ch08 addressing modes
+ch08_01_displacement         exit     20
+ch08_02_register_indirect    exit     10
+ch08_03_base_displacement    exit     30
+ch08_04_index_scaled         exit     40
+ch08_05_base_index_bytes     exit     5
+ch08_06_base_index_scale     exit     15
+ch08_07_scale_and_disp       exit     40
+ch08_08_byte_array_sum       exit     15
+ch08_09_word_array_sum       exit     255
+ch08_10_dword_array_sum      exit     150
+ch08_11_qword_array_sum      exit     50
+ch08_12_array_average        exit     30
+ch08_13_array_max            exit     88
+ch08_14_array_min            exit     7
+ch08_15_reverse_copy         exit     5
+ch08_16_2d_row_sum           exit     15
+ch08_17_2d_element           exit     6
+ch08_18_count_char           exit     4

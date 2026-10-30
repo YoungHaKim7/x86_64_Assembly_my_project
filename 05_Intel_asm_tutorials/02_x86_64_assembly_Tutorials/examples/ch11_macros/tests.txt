@@ -1,0 +1,9 @@
+# ch11 macros
+ch11_01_single_line_macro          exit     24    -
+ch11_02_macro_params               exit     30    -
+ch11_03_multiline_macro            exit     8     -
+ch11_04_macro_local_labels         exit     10    -
+ch11_05_equ_vs_define              exit     100   -
+ch11_06_exit_macro                 exit     33    -
+ch11_07_macro_library              exit     44    -
+ch11_08_conditional_assemble       exit     1     -

@@ -1,0 +1,1 @@
+proj_01_sum_average   out   sum=100\navg=25\n
