@@ -61,7 +61,7 @@ Let's examine your actual program as if we were debugging it in a terminal.
 
 Your assembly declares four variables:
 
-```
+```asm
 section .data
     bVar1   db  0x11
     wVar1   dw  0x2222
@@ -81,7 +81,7 @@ Your disassembly reveals that the data section starts at `0x402000`.
 
 Let's reconstruct the memory layout.
 
-```
+```asm
 DATA SECTION
 Address       Variable      Size       Value
 ────────────────────────────────────────────────────
@@ -103,7 +103,7 @@ Because the assembler places these variables consecutively. It does not automati
 
 The address calculations are:
 
-```
+```asm
 bVar1 = 0x402000
 wVar1 = 0x402001
 dVar1 = 0x402003
@@ -119,7 +119,7 @@ Disassembly translates machine-code bytes into assembly instructions.
 
 For example:
 
-```
+```asm
 00401000    48 b90120400000000000
             movabs rcx, 0x402001
 ```
@@ -136,7 +136,7 @@ Let's break this down.
 
 The CPU executes this instruction:
 
-```
+```asm
 movabs rcx, 0x402001
 ```
 
@@ -148,7 +148,7 @@ It copies the address itself.
 
 Think of the difference:
 
-```
+```asm
 mov rcx, wVar1       ; Put the address into RCX
 mov rcx, [wVar1]     ; Read memory at that address
 ```
@@ -161,7 +161,7 @@ Your program intentionally uses addresses because it wants to calculate the dist
 
 Your disassembly:
 
-```
+```asm
 00401000    movabs rcx, 0x402001
 0040100a    movabs rdx, 0x402000
 00401014    sub    rcx, rdx
@@ -171,45 +171,45 @@ Let's execute this manually.
 
 Before execution:
 
-```
+```asm
 RCX = ?
 RDX = ?
 ```
 
 Instruction 1:
 
-```
+```asm
 movabs rcx, 0x402001
 ```
 
 Now:
 
-```
+```asm
 RCX = 0x402001
 ```
 
 Instruction 2:
 
-```
+```asm
 movabs rdx, 0x402000
 ```
 
 Now:
 
-```
+```asm
 RCX = 0x402001
 RDX = 0x402000
 ```
 
 Instruction 3:
 
-```
+```asm
 sub rcx, rdx
 ```
 
 The CPU performs:
 
-```
+```asm
 RCX = RCX - RDX
 
 RCX = 0x402001 - 0x402000
@@ -227,13 +227,13 @@ Let's reconstruct the entire execution.
 
 Calculation 1: Byte
 
-```
+```asm
 mov rcx, wVar1
 mov rdx, bVar1
 sub rcx, rdx
 ```
 
-```
+```asm
 0x402001 - 0x402000 = 1
 
 RCX = 1
@@ -241,13 +241,13 @@ RCX = 1
 
 Calculation 2: Word
 
-```
+```asm
 mov r8, dVar1
 mov rdx, wVar1
 sub r8, rdx
 ```
 
-```
+```asm
 0x402003 - 0x402001 = 2
 
 R8 = 2
@@ -255,13 +255,13 @@ R8 = 2
 
 Calculation 3: Doubleword
 
-```
+```asm
 mov r9, qVar1
 mov rdx, dVar1
 sub r9, rdx
 ```
 
-```
+```asm
 0x402007 - 0x402003 = 4
 
 R9 = 4
@@ -269,13 +269,13 @@ R9 = 4
 
 Calculation 4: Quadword
 
-```
+```asm
 mov rax, qEnd
 mov rdx, qVar1
 sub rax, rdx
 ```
 
-```
+```asm
 0x40200F - 0x402007 = 8
 
 RAX = 8
@@ -300,7 +300,7 @@ This is exactly what your program is demonstrating.
 
 Your register dump:
 
-```
+```asm
 Registers
 
 rax : 0x00
@@ -346,7 +346,7 @@ x86-64 has 16 general-purpose registers.
 
 For your program, the important registers are:
 
-```
+```asm
 RCX = First calculation result
 R8  = Second calculation result
 R9  = Third calculation result
@@ -359,7 +359,7 @@ RDI = Exit status
 
 You might notice that your register dump shows:
 
-```
+```asm
 rax = 0
 rcx = 0
 r8  = 0
@@ -371,13 +371,13 @@ This is because your register snapshot shows the initial execution state.
 
 Look at:
 
-```
+```asm
 rip : 0x401000
 ```
 
 Your first instruction is located at `0x401000`.
 
-```
+```asm
 00401000    movabs rcx, 0x402001
 ```
 
@@ -385,7 +385,7 @@ If the CPU has not executed this instruction yet, `RCX` has not received `0x4020
 
 The expected progression is:
 
-```
+```asm
 BEFORE EXECUTION
 ──────────────────────────
 RIP = 0x401000
@@ -412,19 +412,19 @@ It tells you the address of the next instruction to execute.
 
 For example:
 
-```
+```asm
 RIP = 0x401000
 ```
 
 The next instruction is:
 
-```
+```asm
 movabs rcx, 0x402001
 ```
 
 After executing it:
 
-```
+```asm
 RIP = 0x40100a
 ```
 
@@ -432,13 +432,13 @@ Why `0x40100a`?
 
 Because the instruction occupies 10 bytes.
 
-```
+```asm
 0x401000 + 10 = 0x40100a
 ```
 
 This is why instruction addresses in disassembly are different.
 
-```
+```asm
 00401000    movabs rcx, ...
 0040100a    movabs rdx, ...
 00401014    sub rcx, rdx
@@ -452,13 +452,13 @@ The CPU advances RIP according to the length of each instruction, not by a fixed
 
 Your register dump shows:
 
-```
+```asm
 rsp = 0x4ffffffffed0
 ```
 
 This means the stack pointer currently points to address:
 
-```
+```asm
 0x4ffffffffed0
 ```
 
@@ -468,7 +468,7 @@ On x86-64 Linux, the stack generally grows toward lower memory addresses.
 
 For example:
 
-```
+```asm
 Higher addresses
        |
        v
@@ -488,7 +488,7 @@ Lower addresses
 
 The important instructions for understanding stack movement are:
 
-```
+```asm
 push rax
 pop rax
 ```
@@ -503,7 +503,7 @@ Your current program does not use `push` or `pop`, so it doesn't explicitly crea
 
 Your emulator displays:
 
-```
+```asm
 Stack memory
 
 00004ffffffffed0
@@ -563,7 +563,7 @@ When Linux starts a process, it prepares an initial stack containing information
 
 Your program was launched as:
 
-```
+```bash
 ./program
 ```
 
@@ -577,7 +577,7 @@ is particularly interesting.
 
 Let's decode it.
 
-```
+```bash
 Hexadecimal:
 2f 70 72 6f 67 72 61 6d 00
 
@@ -599,7 +599,7 @@ This is an example of how reverse engineers interpret raw memory.
 
 Consider this example:
 
-```
+```asm
 push rax
 push rbx
 push rcx
@@ -607,25 +607,25 @@ push rcx
 
 Suppose initially:
 
-```
+```asm
 RSP = 0x1000
 ```
 
 After the first push:
 
-```
+```asm
 RSP = 0x0ff8
 ```
 
 After the second push:
 
-```
+```asm
 RSP = 0x0ff0
 ```
 
 After the third push:
 
-```
+```asm
 RSP = 0x0fe8
 ```
 
@@ -647,7 +647,7 @@ This is the downward-growing stack.
 
 You have many lines like:
 
-```
+```asm
 00401066    0000    add [rax], al
 00401068    0000    add [rax], al
 0040106a    0000    add [rax], al
@@ -659,7 +659,7 @@ They appear because your disassembler continues interpreting zero-filled bytes a
 
 Look at your program's ending:
 
-```
+```asm
 last:
     mov rdi, rax
     mov eax, 0x3c
@@ -668,7 +668,7 @@ last:
 
 The last meaningful instruction is:
 
-```
+```asm
 syscall
 ```
 
@@ -678,7 +678,7 @@ But your disassembler continues reading subsequent bytes.
 
 For example:
 
-```
+```asm
 Machine code:
 00 00
 
@@ -702,13 +702,13 @@ Important
 
 You can limit disassembly to the `.text` section:
 
-```
+```bash
 objdump -d -Mintel ./program
 ```
 
 Or inspect the ELF sections:
 
-```
+```bash
 readelf -S ./program
 ```
 
@@ -716,7 +716,7 @@ readelf -S ./program
 
 Your final instructions are:
 
-```
+```asm
 last:
     mov rdi, rax
     mov eax, 0x3c
@@ -727,31 +727,31 @@ Let's examine them.
 
 Linux x86-64 uses syscall number `60` for `exit`.
 
-```
+```asm
 mov rdi, rax
 ```
 
 Your previous calculation produced:
 
-```
+```asm
 RAX = 8
 ```
 
 Therefore:
 
-```
+```asm
 RDI = 8
 ```
 
 Next:
 
-```
+```asm
 mov eax, 0x3c
 ```
 
 This sets:
 
-```
+```asm
 RAX = 60
 ```
 
@@ -761,13 +761,13 @@ Writing to a 32-bit register such as `EAX` automatically clears the upper 32 bit
 
 Finally:
 
-```
+```asm
 syscall
 ```
 
 The Linux kernel receives:
 
-```
+```asm
 RAX = 60    syscall number: exit
 RDI = 8     exit status
 ```
@@ -776,7 +776,7 @@ The process terminates with exit status `8`.
 
 You can verify it:
 
-```
+```bash
 ./program
 echo $?
 ```
@@ -805,13 +805,13 @@ Here are useful commands for your Linux reverse-engineering practice.
 
 Run:
 
-```
+```bash
 gdb ./program
 ```
 
 Then:
 
-```
+```bash
 break _start
 run
 display/i $pc
@@ -824,19 +824,19 @@ display/x $r9
 
 Execute one instruction:
 
-```
+```bash
 si
 ```
 
 Inspect registers:
 
-```
+```bash
 info registers
 ```
 
 Inspect memory around the data section:
 
-```
+```bash
 x/16xb 0x402000
 ```
 
@@ -844,7 +844,7 @@ This displays 16 individual bytes in hexadecimal.
 
 You should see something similar to:
 
-```
+```bash
 0x402000: 0x11 0x22 0x22 0x33 0x33 0x33 0x33 0x44
 0x402008: 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44
 ```
@@ -853,7 +853,7 @@ Remember that x86-64 uses little-endian byte ordering.
 
 For example:
 
-```
+```bash
 qVar1 = 0x4444444444444444
 ```
 
@@ -867,7 +867,7 @@ When reverse engineering an executable, think about these three layers:
 
 Where the CPU stores values while executing instructions.
 
-```
+```bash
 RAX = 8
 RCX = 1
 R8  = 2
@@ -878,7 +878,7 @@ R9  = 4
 
 Where variables, strings, pointers and temporary data reside.
 
-```
+```asm
 .data
 0x402000  bVar1
 0x402001  wVar1
@@ -893,7 +893,7 @@ Stack
 
 The machine instructions that manipulate registers and memory.
 
-```
+```asm
 mov rax, qEnd
 mov rdx, qVar1
 sub rax, rdx
