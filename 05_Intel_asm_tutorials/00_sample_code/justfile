@@ -9,5 +9,5 @@ r:
     mv src/main.o {{target_folder}}/main.o
     # as -o {{target_folder}}/main.o {{source_main}}
     # gcc links libc (for printf); -nostartfiles keeps our _start, -no-pie matches the absolute addressing used in the asm
-    gcc {{target_folder}}/main.o -o target/{{project_name}}
+    gcc -no-pie {{target_folder}}/main.o -o target/{{project_name}}
     {{target_folder}}/{{project_name}}

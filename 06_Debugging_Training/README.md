@@ -1,3 +1,6 @@
+# debugging자료 힌트
+- https://stackoverflow.com/questions/72302325/can-i-avoid-debugger-to-stop-in-assembly-code
+
 # sample code(x86_64) assembly
 - https://app.x64.halb.it/
 ```asm
