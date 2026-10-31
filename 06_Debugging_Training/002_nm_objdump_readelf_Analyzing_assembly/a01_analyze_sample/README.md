@@ -118,6 +118,22 @@ Key to Flags:
   D (mbind), l (large), p (processor specific)
 
 ##
+$ readelf -sW target/main
+
+Symbol table '.symtab' contains 10 entries:
+   Num:    Value          Size Type    Bind   Vis      Ndx Name
+     0: 0000000000000000     0 NOTYPE  LOCAL  DEFAULT  UND
+     1: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS src/main.asm
+     2: 0000000000402000     0 NOTYPE  LOCAL  DEFAULT    2 my_value
+     3: 0000000000402008     0 NOTYPE  LOCAL  DEFAULT    3 buffer
+     4: 0000000000401019     0 NOTYPE  GLOBAL DEFAULT    1 calculate
+     5: 0000000000000000     0 NOTYPE  GLOBAL DEFAULT  UND _start
+     6: 0000000000402008     0 NOTYPE  GLOBAL DEFAULT    3 __bss_start
+     7: 0000000000401000     0 NOTYPE  GLOBAL DEFAULT    1 main
+     8: 0000000000402008     0 NOTYPE  GLOBAL DEFAULT    2 _edata
+     9: 0000000000402048     0 NOTYPE  GLOBAL DEFAULT    3 _end
+
+##
 $ readelf -rW target/main
 
 There are no relocations in this file.
