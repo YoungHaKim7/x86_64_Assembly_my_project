@@ -1,5 +1,12 @@
 
 ```bash
+## You can inspect symbol sizes using:
+$ nm -S --size-sort target/main
+0000000000401019 0000000000000004 T calculate
+0000000000402000 0000000000000008 d my_value
+0000000000401000 0000000000000019 T main
+0000000000402008 0000000000000040 b buffe
+
 ##
 $ nm -n target/main
                  U _start
