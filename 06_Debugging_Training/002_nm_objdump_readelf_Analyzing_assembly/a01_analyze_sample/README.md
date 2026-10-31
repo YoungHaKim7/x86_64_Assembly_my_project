@@ -249,21 +249,6 @@ Disassembly of section .data:
         ...
 
 ##
-$ objdump -h intel target/main
-objdump: 'intel': No such file
-
-target/main:     file format elf64-x86-64
-
-Sections:
-Idx Name          Size      VMA               LMA               File off  Algn
-  0 .text         0000001d  0000000000401000  0000000000401000  00001000  2**4
-                  CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000008  0000000000402000  0000000000402000  00002000  2**2
-                  CONTENTS, ALLOC, LOAD, DATA
-  2 .bss          00000040  0000000000402008  0000000000402008  00002008  2**2
-                  ALLOC
-
-##
 $ objdump -h target/main
 
 target/main:     file format elf64-x86-64
