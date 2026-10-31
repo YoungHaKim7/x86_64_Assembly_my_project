@@ -1,55 +1,46 @@
 ; -----------------------------------------------------------------------------
-; A 64-bit Linux application that writes the first 90 Fibonacci numbers.
-; To assemble and run:
-;   nasm -felf64 fib.asm && gcc fib.o && ./a.out
+; Data sizes: db, dw, dd, dq occupy consecutive addresses
+;
+; Demonstrates: consecutive data declarations, label addresses, sub on addresses
+; Book ref:     "x86-64 Assembly Language Programming with Ubuntu",
+;               Ed Jorgensen, section 2.2 (Data Storage Sizes)
+;
+; Build:  yasm -f elf64 -g dwarf2 -l ch02_01_data_sizes.lst ch02_01_data_sizes.asm && ld -g -o ch02_01_data_sizes ch02_01_data_sizes.o
+; Run:    ./ch02_01_data_sizes ; echo $?        -> exit code: 8
 ; -----------------------------------------------------------------------------
 
-global main
-extern printf
+SYS_exit         equ 60
+EXIT_SUCCESS     equ 0
 
 section .data
-    format: db "%ld", 10, 0    ; "%ld\n" format string for printf
+    bVar1       db  0x11                    ; byte  variable (1 byte)
+    wVar1       dw  0x2222                  ; word  variable (2 bytes, 1 past bVar1)
+    dVar1       dd  0x33333333              ; dword variable (4 bytes, 2 past wVar1)
+    qVar1       dq  0x4444444444444444      ; qword variable (8 bytes, 4 past dVar1)
+qEnd:                                       ; label placed right after the qword
 
 section .text
+global main
 main:
-    push rbx                  ; Save rbx (callee-saved register)
-    push r12                  ; Save r12
-    push r13                  ; Save r13
 
-    mov rcx, 90               ; Loop counter for 90 Fibonacci numbers
-    xor rax, rax              ; rax = F(n-2) = 0
-    xor rbx, rbx              ; rbx = F(n-1) = 0
-    inc rbx                   ; rbx = 1 (first Fibonacci number)
+; each size is the distance between the addresses of adjacent declarations
+    mov     rcx, wVar1                      ; rcx = address of the word
+    mov     rdx, bVar1                      ; rdx = address of the byte
+    sub     rcx, rdx                        ; rcx = 1  -> db reserves 1 byte
 
-print_loop:
-    ; Print current Fibonacci number (stored in rax)
-    push rax                  ; Save current rax
-    push rcx                  ; Save rcx (caller-saved)
+    mov     r8, dVar1                       ; r8  = address of the dword
+    mov     rdx, wVar1                      ; rdx = address of the word
+    sub     r8, rdx                         ; r8  = 2  -> dw reserves 2 bytes
 
-    mov rdi, format           ; 1st argument for printf: format string
-    mov rsi, rax              ; 2nd argument for printf: value to print
-    xor rax, rax              ; Clear rax for varargs (printf uses 0 vector registers)
-    call printf
+    mov     r9, qVar1                       ; r9  = address of the qword
+    mov     rdx, dVar1                      ; rdx = address of the dword
+    sub     r9, rdx                         ; r9  = 4  -> dd reserves 4 bytes
 
-    pop rcx                   ; Restore rcx
-    pop rax                   ; Restore rax
+    mov     rax, qEnd                       ; rax = address just past the qword
+    mov     rdx, qVar1                      ; rdx = address of the qword
+    sub     rax, rdx                        ; rax = 8  -> dq reserves 8 bytes
 
-    ; Compute next Fibonacci number:
-    ; F(n) = F(n-1) + F(n-2)
-    mov rdx, rbx              ; rdx = F(n-1)
-    add rdx, rax              ; rdx = F(n-1) + F(n-2)
-    mov rax, rbx              ; Shift F(n-1) into rax
-    mov rbx, rdx              ; Shift new sum into rbx
-
-    dec rcx                   ; Decrement counter
-    jnz print_loop            ; Repeat until rcx reaches 0
-
-    xor rax, rax              ; Return code 0
-    pop r13                   ; Restore r13
-    pop r12                   ; Restore r12
-    pop rbx                   ; Restore rbx
-    ret
-
-; Mark stack as non-executable; silences the linker warning about
-; "missing .note.GNU-stack section implies executable stack"
-section .note.GNU-stack noalloc noexec nowrite progbits
+last:
+    mov     rdi, rax                        ; exit code: qword size (8)
+    mov     rax, SYS_exit                   ; call code for exit
+    syscall
