@@ -1,3 +1,6 @@
+# NASM vs Yasm잘 비교해서 설명해줌
+- https://www.wasilzafar.com/pages/series/assembly-mastery/asm-part06-masm.html
+
 # asm-lsp
 - https://github.com/bergercookie/asm-lsp
 
