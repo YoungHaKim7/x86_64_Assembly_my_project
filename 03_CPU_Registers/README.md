@@ -108,3 +108,237 @@
 # Buffer Overflow 101: Ep 1 - x86 Memory Fundamentals
 - flipthebit
   - https://youtu.be/_D8eLCmlrS8?si=hzuV2rsC7zsd9WF0
+
+Your table is mostly correct as a historical description of the x86 register family, but some descriptions are incomplete or misleading for modern x86-64.
+
+The biggest issue is that names such as Accumulator, Counter, and Data describe the registers' historical purposes. In x86-64, most general-purpose registers can be used for many different purposes.
+
+## 1. Register names and sizes
+
+Your register mapping is correct:
+
+| Historical name    | 64-bit | 32-bit | 16-bit | 8-bit   |
+| ------------------ | ------ | ------ | ------ | ------- |
+| Accumulator        | RAX    | EAX    | AX     | AL / AH |
+| Counter            | RCX    | ECX    | CX     | CL / CH |
+| Data               | RDX    | EDX    | DX     | DL / DH |
+| Base               | RBX    | EBX    | BX     | BL / BH |
+| Stack Pointer      | RSP    | ESP    | SP     | SPL     |
+| Stack Base Pointer | RBP    | EBP    | BP     | BPL     |
+| Source Index       | RSI    | ESI    | SI     | SIL     |
+| Destination Index  | RDI    | EDI    | DI     | DIL     |
+
+Important: The 8-bit registers `AH`, `BH`, `CH`, and `DH` are the upper halves of the 16-bit registers. They are not available in instructions that use a REX prefix. The newer registers `SPL`, `BPL`, `SIL`, and `DIL` are available in 64-bit mode.
+
+Also, writing to a 32-bit register in 64-bit mode zero-extends its value into the corresponding 64-bit register:
+
+```
+mov eax, 0x12345678
+```
+
+Result:
+
+```
+RAX = 0x0000000012345678
+       └──────┘└──────┘
+       zero    EAX
+```
+
+Writing to a 16-bit or 8-bit register does not clear the upper bits.
+
+## 2. Correct descriptions of the registers
+
+Here are more accurate descriptions for your list.
+
+| Register | Traditional purpose | Modern x86-64 usage                                                                   |
+| -------- | ------------------- | ------------------------------------------------------------------------------------- |
+| RAX      | Accumulator         | General-purpose; also used for arithmetic results, return values, and syscall numbers |
+| RCX      | Counter             | General-purpose; used as a loop counter and shift count (`CL`)                        |
+| RDX      | Data                | General-purpose; also used in multiplication, division, and I/O                       |
+| RBX      | Base                | General-purpose; historically used as a base register                                 |
+| RSP      | Stack Pointer       | Points to the current top of the stack                                                |
+| RBP      | Stack Base Pointer  | Often used as a stack-frame base pointer, but can be a general-purpose register       |
+| RSI      | Source Index        | General-purpose; source pointer for string instructions and an argument register      |
+| RDI      | Destination Index   | General-purpose; destination pointer for string instructions and an argument register |
+
+### Important corrections
+
+RSP — Stack Pointer
+
+Your description is correct, but the stack behavior is worth understanding:
+
+```
+push rax
+```
+
+Conceptually:
+
+```
+RSP = RSP - 8
+[RSP] = RAX
+```
+
+And:
+
+```
+pop rax
+```
+
+Conceptually:
+
+```
+RAX = [RSP]
+RSP = RSP + 8
+```
+
+In 64-bit mode, a normal `push` or `pop` of a general-purpose register uses 8 bytes.
+
+RBP — Stack Base Pointer
+
+It is commonly used as a frame pointer, but it is not required to be one.
+
+For example:
+
+```
+push rbp
+mov  rbp, rsp
+
+; Function body
+
+mov  rsp, rbp
+pop  rbp
+ret
+```
+
+Here, RBP provides a stable reference point for accessing local variables and function arguments.
+
+However, modern compilers often omit the frame pointer and use RBP as a general-purpose register.
+
+RSI and RDI — Source and Destination Index
+
+These are particularly important for string instructions:
+
+```
+movsb
+movsw
+movsd
+movsq
+```
+
+For example:
+
+```
+movsb
+```
+
+Copies one byte from the memory address in RSI to the memory address in RDI.
+
+Conceptually:
+
+```
+[RDI] = [RSI]
+
+RSI = RSI + 1
+RDI = RDI + 1
+```
+
+The direction of the updates depends on the Direction Flag (DF).
+
+## 3. An important missing detail: x86-64 calling convention
+
+Your table describes traditional register roles, but it does not explain how modern programs use these registers when calling functions.
+
+On Linux x86-64, the System V AMD64 ABI uses these registers for integer and pointer arguments:
+
+| Argument     | Register |
+| ------------ | -------- |
+| 1st          | RDI      |
+| 2nd          | RSI      |
+| 3rd          | RDX      |
+| 4th          | RCX      |
+| 5th          | R8       |
+| 6th          | R9       |
+| Return value | RAX      |
+
+For example, consider:
+
+```
+long add(long a, long b)
+{
+    return a + b;
+}
+```
+
+A corresponding assembly implementation could be:
+
+```
+global add
+
+section .text
+add:
+    mov rax, rdi
+    add rax, rsi
+    ret
+```
+
+Register layout:
+
+```
+             Function: add(a, b)
+
+        RDI                 RSI
+         │                   │
+         ▼                   ▼
+       ┌─────┐             ┌─────┐
+       │  a  │             │  b  │
+       └─────┘             └─────┘
+           \                 /
+            \               /
+             ▼             ▼
+              add rdi, rsi
+                    │
+                    ▼
+                  RAX
+               return value
+```
+
+This is why RSI and RDI are not exclusively source and destination registers.
+
+Note: Windows x64 uses a different calling convention: RCX, RDX, R8, and R9 are the first four integer/pointer argument registers.
+
+## 4. What is missing from your table?
+
+Your table only shows the original eight general-purpose registers. Modern x86-64 has sixteen general-purpose registers:
+
+| 64-bit | 32-bit | 16-bit | 8-bit |
+| ------ | ------ | ------ | ----- |
+| RAX    | EAX    | AX     | AL    |
+| RBX    | EBX    | BX     | BL    |
+| RCX    | ECX    | CX     | CL    |
+| RDX    | EDX    | DX     | DL    |
+| RSI    | ESI    | SI     | SIL   |
+| RDI    | EDI    | DI     | DIL   |
+| RBP    | EBP    | BP     | BPL   |
+| RSP    | ESP    | SP     | SPL   |
+| R8     | R8D    | R8W    | R8B   |
+| R9     | R9D    | R9W    | R9B   |
+| R10    | R10D   | R10W   | R10B  |
+| R11    | R11D   | R11W   | R11B  |
+| R12    | R12D   | R12W   | R12B  |
+| R13    | R13D   | R13W   | R13B  |
+| R14    | R14D   | R14W   | R14B  |
+| R15    | R15D   | R15W   | R15B  |
+
+## Final verdict
+
+Your table's register names and size relationships are correct, but I recommend these changes:
+
+1. Change Stack Base Pointer to Base Pointer (Frame Pointer).
+2. Change Source to Source Index.
+3. Change Dest. to Destination Index.
+4. Explain that traditional register purposes are historical conventions, not restrictions.
+5. Add the eight additional registers, R8–R15, to represent the complete x86-64 general-purpose register set.
+
+The most important distinction to remember is:
+
+RAX, RBX, RCX, and RDX are all general-purpose registers in x86-64. Their historical names describe common roles, not what they are exclusively allowed to do.
