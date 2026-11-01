@@ -16,6 +16,9 @@
 - AT&T syntax & Intel syntax(asm)
 - https://github.com/YoungHaKim7/rust_os_x86_64/commit/b80f5dff395fbad72cc357dbf053199a9bfb9121
 
+- The full 64-bit immediate form uses the `B8+rd` opcode encoding with an eight-byte immediate. 
+  - https://gnu.googlesource.com/binutils-gdb/%2B/master/opcodes/i386-opc.tbl?utm_source=chatgpt.com
+
 # NASM vs Yasm
 - https://www.wasilzafar.com/pages/series/assembly-mastery/asm-part06-masm.html
 
