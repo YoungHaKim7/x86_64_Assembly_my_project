@@ -717,3 +717,40 @@ Watch how `RAX` changes after each instruction.
 | `movsxd rax, eax` | Upper 32 bits copy the sign bit |
 
 There is no general concept of allocating data to the upper or lower half here. You are simply choosing which portion of the register an instruction modifies.
+
+# `a01_mov_movabs/`
+
+- The assembler is rejecting the operands in `src/main.asm`. Let me look at the file.
+
+The source itself looks valid, so let me reproduce the error and check the file for hidden characters.
+
+The file is pure ASCII and the source is valid x86-64 assembly. Something is off with `as` itself — let me check what binary it is and test a minimal case.
+
+Found the root cause. GNU `as` defaults to **AT&T syntax**, but the file is written in **Intel syntax** (no `%` on registers, no `$` on immediates). In AT&T syntax `eax` isn't recognized as a register, hence "operand type mismatch" on every instruction. Let me check the justfile to confirm how it builds.
+
+The justfile explains it: recipe `r` uses `nasm` (Intel syntax by default — works), but recipe `gdb` uses `as` (GAS), which defaults to AT&T syntax. Adding `.intel_syntax noprefix` to the source fixes GAS. Now I need to check whether that breaks the `nasm` recipe, and whether a command-line flag alone would do it.
+
+Both assemblers reject this file as-is: `as` fails on syntax mode, and `nasm` fails on the GAS-style directives (`.global`, `.section`) — so the `r` recipe was broken too. The file is written in GAS style, so the coherent fix is GAS for both recipes. Let me check sibling exercises to match conventions.
+
+Conventions confirmed: NASM files in this project use `global`/`section` without dots; this file uses GAS-style directives, so it's meant for `as`. Applying the fix: add `.intel_syntax noprefix` to the source, and switch the `r` recipe from `nasm` (which can't parse this file) to `as` as well.
+
+Now verifying end-to-end — build, link, run, and a non-interactive gdb check:
+
+Builds, links, runs (exit 0), and the disassembly shows every instruction encoded correctly, including both `movabs` with the full 64-bit immediate. Last check — the actual gdb flow in batch mode:
+
+Fixed — `just gdb` now assembles, links, and debugs correctly.
+
+**Root cause:** your `main.asm` is written in Intel syntax (no `%`/`$` prefixes), but GNU `as` defaults to AT&T syntax. In AT&T mode `rax` isn't recognized as a register, so every instruction failed with "operand type mismatch". The fix was one line at the top of [main.asm:1](/home/gygy/my_projects/Assembly_Lang/x86_64_Assembly_my_project/06_Debugging_Training/003_operator_xor_mov_movabs_etc/a01_mov_movabs/src/main.asm#L1):
+
+```asm
+.intel_syntax noprefix
+```
+
+**Also fixed the `r` recipe:** it used `nasm`, which can never assemble this file — the file uses GAS-style directives (`.global`, `.section`, `.note.GNU-stack`) that NASM rejects, so `just r` was broken even before this. Since the file is GAS-flavored, I switched `r` to `as --64` in the [justfile](/home/gygy/my_projects/Assembly_Lang/x86_64_Assembly_my_project/06_Debugging_Training/003_operator_xor_mov_movabs_etc/a01_mov_movabs/justfile), matching the `gdb` recipe. Both recipes now build the same source.
+
+**Verified end-to-end:**
+- `as` + `ld` succeed; the binary runs and exits 0.
+- Disassembly shows correct encodings, including both 10-byte `movabs rax, 0x123456789ABCDEF0` instructions.
+- In gdb, after `starti` + 5 steps, `rax = 0x123456789abc2233` — exactly what the exercise demonstrates: the full 64-bit immediate, then `mov eax` zeroing the top half, then the second `movabs` restoring it, then `mov ax, 0x2222` and `mov al, 0x33` overwriting only the low word/byte.
+
+One harmless note: `ld` prints `warning: cannot find entry symbol _start` because your entry is named `main`. It still works (execution starts at `main`, the first symbol in `.text`). If you want to silence it, rename the label to `_start` or add `-e main` to the `ld` lines.
