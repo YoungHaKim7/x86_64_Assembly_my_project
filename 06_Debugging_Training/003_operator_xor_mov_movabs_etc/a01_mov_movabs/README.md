@@ -1,3 +1,6 @@
+# binutils(docs)
+- https://sourceware.org/binutils/docs-2.41/as/Section.html
+
 # gdb
 
 ```bash
