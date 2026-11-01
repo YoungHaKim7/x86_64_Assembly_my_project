@@ -1,0 +1,20 @@
+#!/usr/bin/env just --justfile
+
+asm_file := "src/main.asm"
+obj_file := "target/main.o"
+exe_file := "target/main"
+
+r:
+    rm -rf target
+    mkdir -p target
+    as --64 {{asm_file}} -o {{obj_file}}
+    ld -o {{exe_file}} {{obj_file}}
+    ./{{exe_file}}
+
+gdb:
+    rm -rf target
+    mkdir -p target
+    as --64 {{asm_file}} -o {{obj_file}}
+    ld -o {{exe_file}} {{obj_file}}
+    gdb ./{{exe_file}}
+
