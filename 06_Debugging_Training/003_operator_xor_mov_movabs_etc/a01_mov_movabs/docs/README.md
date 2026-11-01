@@ -1,3 +1,25 @@
+- The key is:
+  - `objdump` tells you what instructions exist and their addresses.
+  - `nm` tells you where functions and symbols are located.
+  - `GDB` tells you which instruction is executing and what is happening to the CPU state.
+
+- Inside GDB:
+```bash
+set disassembly-flavor intel
+break main
+run
+
+layout asm
+layout regs
+
+display/i $rip
+display/x $rax
+
+si
+si
+si
+```
+
 ```bash
 (No debugging symbols found in ./target/main)
 (gdb) b main
