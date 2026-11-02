@@ -24,7 +24,7 @@
 <hr>
 
 - Documentation
-  - [Using `as`| This file is a user guide to the GNU assembler as (GNU Binutils) version 2.41.](https://sourceware.org/binutils/docs-2.41/as/index.html#SEC_Contents)
+  - [(외부링크) Using `as`| This file is a user guide to the GNU assembler as (GNU Binutils) version 2.41.](https://sourceware.org/binutils/docs-2.41/as/index.html#SEC_Contents)
 
 - Instructions
   - [CPU Instructions](#cpu-instructions)
