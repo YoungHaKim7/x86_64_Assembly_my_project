@@ -36,6 +36,12 @@
   - 32bit
     - https://gist.github.com/DmitrySoshnikov/c67cbde1cceb0d6a194830b41baa5c8b
 
+- 러스트언어로 OS만들면서 정리한 문서(AT&T Syntax VS Intel Syntax, Page_Tables , cpu작동원리, etc기타등등)
+  - Arm
+    - https://github.com/YoungHaKim7/rust_os_arm_macos/tree/main/docs
+  - x86_64
+    - https://github.com/YoungHaKim7/rust_os_x86_64/tree/main/docs
+
 <hr />
 
 - lsp
