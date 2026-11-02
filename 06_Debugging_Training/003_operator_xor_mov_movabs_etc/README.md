@@ -1,3 +1,20 @@
+# gdb 기본 패턴
+```gdb
+set disassembly-flavor intel
+break main
+run
+
+layout asm
+layout regs
+
+display/i $rip
+display/x $rax
+
+si
+si
+si
+```
+
 # `movabs` in x86-64 assembly
 
 `movabs` is an instruction mnemonic used by GNU assembler and disassemblers to represent a `MOV` instruction that transfers a **64-bit immediate value or a 64-bit memory address**\.

@@ -1,6 +1,22 @@
 # binutils(docs)
 - https://sourceware.org/binutils/docs-2.41/as/Section.html
 
+```gdb
+set disassembly-flavor intel
+break main
+run
+
+layout asm
+layout regs
+
+display/i $rip
+display/x $rax
+
+si
+si
+si
+```
+
 # 코드랑 주소랑 비교하면서 보자
 ```bash
 objdump -d -M intel target/main
