@@ -1,6 +1,12 @@
 # 문제 풀면서 지식을 익히자
 - https://www.wasilzafar.com/pages/series/assembly-mastery/asm-part06-masm.html
 
+### Real-World Use Case
+- (change `_start` → `_main`, use macOS syscall numbers)
+- https://www.wasilzafar.com/pages/series/assembly-mastery/asm-part07-memory-addressing.html
+
+<hr />
+
 # 기본적인 상식
 - In x86-64 assembly, which register traditionally holds the return value of a function
   - `RAX`
